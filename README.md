@@ -1,6 +1,6 @@
 # Sandul Hansana — Personal Portfolio
 
-A responsive React and Tailwind CSS portfolio with a premium navy theme, blue and purple accents, custom CSS illustrations, accessible project dialogs, project filtering, a mobile menu, contact form, and downloadable PDF résumé.
+A responsive React and Tailwind CSS portfolio with a premium navy theme, blue and purple accents, a floating navigation bar, an animated SVG orb, reading progress, accessible project dialogs, project filtering, a mobile menu, contact form, and downloadable PDF résumé.
 
 ## Development
 
@@ -15,7 +15,7 @@ Create the production build with `npm run build`, and preview it with `npm run p
 
 ## Content
 
-Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, with contact behavior in `src/Contact.jsx` and styles in `src/styles.css`.
+Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero and SVG illustration are in `src/Hero.jsx`, and skill groups and icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css` and `src/skills.css`. Animations and pointer effects respect reduced-motion preferences.
 
 All education, skills, projects, and contact details come from information supplied by Sandul. No internship, employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
 

@@ -51,7 +51,7 @@ export function Skills() {
   return <section id="skills" className="section skills-section" ref={section} aria-labelledby="skills-heading">
     <div className="container">
       <div className="section-label"><span>02 / MY TOOLBOX</span><span className="label-line"/></div>
-      <div className="section-heading"><h2 id="skills-heading">The skills behind<br/><span className="text-muted">the solutions.</span></h2><p>A growing collection of technologies and tools<br className="desktop-break"/> I use to bring ideas to life.</p></div>
+      <div className="section-heading"><h2 id="skills-heading">Good ideas meet<br/><span className="text-muted">the right tools.</span></h2><p>A growing collection of technologies and tools<br className="desktop-break"/> I use to bring ideas to life.</p></div>
       <div className="skills-grid">
         {groups.map((group, index) => <article className={`skill-card skill-category-${group.tone}`} key={group.title} style={{ '--card-delay': `${index * 90}ms` }}>
           <div className={`skill-icon ${group.tone}`}><SkillIcon name={group.icon}/></div>

@@ -4,6 +4,7 @@ import { ProjectDialog } from './ProjectDialog';
 import { projects } from './profile';
 import { TicketCode } from './TicketCode';
 import { Skills } from './Skills';
+import { Hero, TechRibbon } from './Hero';
 
 export default function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -11,6 +12,16 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [localTime, setLocalTime] = useState('');
   useEffect(() => {
+    let scrollFrame;
+    const updateProgress = () => {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(() => {
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        document.documentElement.style.setProperty('--scroll-progress', height > 0 ? window.scrollY / height : 0);
+      });
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
     const updateTime = () => setLocalTime(new Intl.DateTimeFormat('en-GB', {timeZone:'Asia/Colombo',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date()) + ' LOCAL TIME');
     updateTime();
     const timer = setInterval(updateTime, 60000);
@@ -21,10 +32,11 @@ export default function App() {
     if(motion) { document.documentElement.classList.add('motion-ready'); document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element)); }
     const navObserver = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) document.querySelectorAll('nav a').forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id)); }), {rootMargin:'-15% 0px -65% 0px'});
     document.querySelectorAll('main section[id]').forEach(section => navObserver.observe(section));
-    return () => { clearInterval(timer); revealObserver.disconnect(); navObserver.disconnect(); document.documentElement.classList.remove('motion-ready'); document.removeEventListener('keydown', keyHandler); };
+    return () => { window.removeEventListener('scroll', updateProgress); cancelAnimationFrame(scrollFrame); clearInterval(timer); revealObserver.disconnect(); navObserver.disconnect(); document.documentElement.classList.remove('motion-ready'); document.removeEventListener('keydown', keyHandler); };
   }, []);
   return <>
 
+  <div className="reading-progress" aria-hidden="true"/>
   <a className="skip-link" href="#main">Skip to content</a>
   <header className="header">
     <div className="nav-wrap container">
@@ -38,45 +50,22 @@ export default function App() {
   </header>
 
   <main id="main">
-    <section id="home" className="hero container">
-      <div className="hero-content">
-        <span className="eyebrow hero-eyebrow"><span className="status-dot"></span> LEARNING. BUILDING. EVOLVING.</span>
-        <p className="hello">Hey there, I’m Sandul <span className="wave" aria-hidden="true">✳</span></p>
-        <h1>Turning ideas into<br/><span className="gradient-text">digital experiences.</span></h1>
-        <p className="hero-role">Software Engineering Undergraduate <span>×</span><br className="role-break"/> Aspiring Full-Stack Developer</p>
-        <p className="hero-description">A curious mind with a love for clean code and thoughtful design. Building useful things, one line at a time.</p>
-        <div className="hero-actions"><a className="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="assets/sandul-hansana-cv.pdf" download>Download CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a></div>
-        <div className="hero-meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Based in Sri Lanka</span><span className="meta-divider"></span><span>Currently at IIT</span></div>
-      </div>
-      <div className="hero-art" role="img" aria-label="Creative illustration of a developer's workspace">
-        <div className="orbital-grid"></div><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div>
-        <div className="floating-tech tech-react" aria-hidden="true">⚛</div><div className="floating-tech tech-code" aria-hidden="true">&lt;/&gt;</div><div className="floating-tech tech-python" aria-hidden="true">Py<span>_</span></div>
-        <div className="code-window">
-          <div className="window-bar"><div className="window-dots"><i></i><i></i><i></i></div><span>about-me.js</span><span className="window-icon">⌘</span></div>
-          <div className="code-body"><div className="code-line"><span className="line-number">01</span><span><b>const</b> developer <b>=</b> {'{'}</span></div><div className="code-line"><span className="line-number">02</span><span>&nbsp; name: <em>'Sandul Hansana'</em>,</span></div><div className="code-line"><span className="line-number">03</span><span>&nbsp; role: <em>'Problem Solver'</em>,</span></div><div className="code-line"><span className="line-number">04</span><span>&nbsp; basedIn: <em>'Sri Lanka'</em>,</span></div><div className="code-line"><span className="line-number">05</span><span>&nbsp; passion: [</span></div><div className="code-line"><span className="line-number">06</span><span>&nbsp;&nbsp;&nbsp; <em>'Building things'</em>,</span></div><div className="code-line"><span className="line-number">07</span><span>&nbsp;&nbsp;&nbsp; <em>'Learning every day'</em></span></div><div className="code-line"><span className="line-number">08</span><span>&nbsp; ],</span></div><div className="code-line"><span className="line-number">09</span><span>&nbsp; curiosity: <strong>Infinity</strong></span></div><div className="code-line"><span className="line-number">10</span><span>{'};'}<span className="caret">▏</span></span></div></div>
-          <div className="code-footer"><span><i className="status-dot"></i> Always in development</span><span>JavaScript</span></div>
-        </div>
-        <div className="build-badge"><span className="sparkle">✦</span><div>Ideas into reality<small>That’s what I love to do.</small></div><span className="badge-arrow">↗</span></div>
-        <span className="art-coordinate">IDEAS → CODE → IMPACT <span>LK</span></span>
-      </div>
-      <a className="scroll-hint" href="#about"><span className="mouse"><i></i></span> SCROLL TO EXPLORE <span>↓</span></a>
-    </section>
-
-    <div className="tech-ribbon"><div className="container"><span className="ribbon-label">MY EVERYDAY TOOLKIT</span><span><b className="react-symbol">⚛</b> React</span><span><b className="js-symbol">JS</b> JavaScript</span><span><b className="python-symbol">◈</b> Python</span><span><b className="java-symbol">♨</b> Java</span><span><b>⌘</b> Git & GitHub</span><span className="ribbon-plus">+ a little curiosity</span></div></div>
+    <Hero localTime={localTime}/>
+    <TechRibbon/>
 
     <section id="about" className="section container reveal">
       <div className="section-label"><span>01 / ABOUT ME</span><span className="label-line"></span></div>
       <div className="about-layout">
-        <div><h2>More than just<br/><span className="text-muted">lines of code.</span></h2><div className="about-monogram" aria-hidden="true"><div className="monogram-grid"></div><span>SH<span className="monogram-period">.</span></span><div className="monogram-caption">A BUILDER AT HEART <span>↗</span></div></div></div>
+        <div><h2>A curious mind.<br/><span className="text-muted">A builder at heart.</span></h2><div className="about-monogram" aria-hidden="true"><div className="monogram-grid"></div><span>SH<span className="monogram-period">.</span></span><div className="monogram-caption">A BUILDER AT HEART <span>↗</span></div></div></div>
         <div className="about-copy"><span className="little-label">A LITTLE ABOUT THE PERSON BEHIND THE CODE</span><h3>Hi, I’m Sandul Hansana.<br/>A learner, a thinker, a builder.</h3><p>I’m a fourth-year Software Engineering undergraduate at the <strong>Informatics Institute of Technology (IIT)</strong>, passionate about software development, web technologies, and solving real-world problems through innovative solutions.</p><p>I enjoy building user-friendly applications, exploring new technologies, and continuously sharpening my technical and problem-solving skills. My journey is about connecting what I learn with things that make a difference.</p><div className="about-values"><span><i>↗</i> Always learning</span><span><i>◇</i> Detail-oriented</span><span><i>⌘</i> Problem-driven</span></div><a className="text-link" href="#contact">Let’s build something together <span>↗</span></a></div>
       </div>
     </section>
 
     <Skills/>
 
-    <section id="projects" className="section container reveal">
+    <section id="projects" className="section container work-section reveal">
       <div className="section-label"><span>03 / SELECTED WORK</span><span className="label-line"></span></div>
-      <div className="section-heading"><h2>Learning by building.<br/><span className="text-muted">Here’s the proof.</span></h2><p>Academic projects, experiments, and things<br className="desktop-break"/> I’ve brought to life along the way.</p></div>
+      <div className="section-heading"><h2>A few things<br/><span className="text-muted">I’ve brought to life.</span></h2><p>Academic projects, experiments, and things<br className="desktop-break"/> I’ve brought to life along the way.</p></div>
       <div className="project-filters" role="group" aria-label="Filter projects"><button className={filter === "all" ? "filter active" : "filter"} onClick={() => setFilter("all")} aria-pressed={filter === "all"}>All projects <span>03</span></button><button className={filter === "research" ? "filter active" : "filter"} onClick={() => setFilter("research")} aria-pressed={filter === "research"}>Research</button><button className={filter === "development" ? "filter active" : "filter"} onClick={() => setFilter("development")} aria-pressed={filter === "development"}>Development</button></div>
       <div className="projects-grid">
         <article className="project-card project-featured" data-category="research" hidden={filter !== "all" && filter !== "research"}>
