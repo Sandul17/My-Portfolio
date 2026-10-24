@@ -1,0 +1,113 @@
+.skills-section .skill-card {
+  --skill-accent: #8eafff;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 25px 20px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.skills-section .skill-category-purple { --skill-accent: #bd9bee; }
+.skills-section .skill-category-teal { --skill-accent: #81c7bb; }
+.skills-section .skill-category-amber { --skill-accent: #d9bd82; }
+
+.skills-section .skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--skill-accent) 12%, transparent), transparent 65%);
+  opacity: .35;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+
+.skills-section .skill-card:hover {
+  border-color: color-mix(in srgb, var(--skill-accent) 40%, transparent);
+  box-shadow: 0 18px 40px #0003, 0 0 25px color-mix(in srgb, var(--skill-accent) 5%, transparent);
+}
+
+.skills-section .skill-card:hover::before { opacity: 1; }
+.skills-section .skill-icon { margin-bottom: 22px; }
+.skills-section .skill-icon .skill-svg { width: 21px; height: 21px; }
+.skills-section .skill-card > p { min-height: 36px; }
+
+.skills-section .skill-svg { fill: none; stroke: none; stroke-width: 1.5; }
+.skills-section .skill-svg-outline { stroke: currentColor; }
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  min-height: 37px;
+  padding: 7px 9px;
+  border: 1px solid #ffffff0c;
+  border-radius: 7px;
+  background: #ffffff03;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #b8bfd3;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
+}
+
+.skill-chip > span:last-child { overflow-wrap: anywhere; }
+.skill-brand { display: inline-flex; flex: 0 0 auto; color: #e3e6f2; }
+.skill-brand .skill-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform .3s ease, filter .3s ease;
+}
+.skill-brand-oop, .skill-brand-engineering, .skill-brand-problem { color: #d9bd82; }
+.skill-chip:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--skill-accent) 35%, transparent);
+  background: color-mix(in srgb, var(--skill-accent) 7%, #11141f);
+  color: #f1f2f8;
+}
+.skill-chip:hover .skill-svg { transform: rotate(-8deg) scale(1.12); filter: drop-shadow(0 0 7px #a294ff35); }
+.skill-brand-react .skill-svg { transform-origin: center; }
+.skill-chip:hover .skill-brand-react .skill-svg { transform: rotate(90deg) scale(1.12); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .skills-animated .skill-card:not(.skill-visible) { opacity: 0; translate: 0 24px; }
+  .skills-animated .skill-card.skill-visible { animation: skill-card-enter .65s cubic-bezier(.2,.75,.3,1) var(--card-delay) both; }
+  .skills-animated .skill-visible .skill-chip { animation: skill-chip-enter .45s ease var(--skill-delay) both; }
+  @keyframes skill-card-enter { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+  @keyframes skill-chip-enter { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+}
+
+@media (max-width: 850px) {
+  .skills-section .skill-card { padding: 23px; }
+  .skills-section .skill-card > p { min-height: 20px; }
+  .skill-chip { font-size: 11px; padding: 8px 10px; }
+}
+
+@media (max-width: 600px) {
+  .skills-section .skill-card { padding: 19px 14px; }
+  .skills-section .skill-card h3 { min-height: 36px; }
+  .skills-section .skill-card > p { min-height: 33px; }
+  .skill-list { gap: 7px; margin-top: 15px; }
+  .skill-chip { width: 100%; gap: 8px; font-size: 10px; min-height: 37px; }
+  .skill-brand .skill-svg { width: 18px; height: 18px; }
+}
+
+@media (max-width: 360px) {
+  .skills-section .skill-card h3, .skills-section .skill-card > p { min-height: auto; }
+  .skill-chip { width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-section .skill-card, .skills-section .skill-chip { opacity: 1; translate: none; }
+  .skills-section .skill-card:hover, .skills-section .skill-chip:hover, .skills-section .skill-chip:hover .skill-svg { transform: none; }
+}

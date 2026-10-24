@@ -3,6 +3,7 @@ import { ContactForm, ContactLinks } from './Contact';
 import { ProjectDialog } from './ProjectDialog';
 import { projects } from './profile';
 import { TicketCode } from './TicketCode';
+import { Skills } from './Skills';
 
 export default function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -71,16 +72,7 @@ export default function App() {
       </div>
     </section>
 
-    <section id="skills" className="section skills-section reveal"><div className="container">
-      <div className="section-label"><span>02 / MY TOOLBOX</span><span className="label-line"></span></div>
-      <div className="section-heading"><h2>The skills behind<br/><span className="text-muted">the solutions.</span></h2><p>A growing collection of technologies and tools<br className="desktop-break"/> I use to bring ideas to life.</p></div>
-      <div className="skills-grid">
-        <article className="skill-card"><div className="skill-icon blue">&lt;/&gt;</div><h3>Frontend development</h3><p>Interfaces with people in mind.</p><div className="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div><span className="card-number">01</span></article>
-        <article className="skill-card"><div className="skill-icon purple">{'{ }'}</div><h3>Backend & languages</h3><p>The logic that makes it all work.</p><div className="skill-tags"><span>Java</span><span>Python</span><span>JavaScript</span></div><span className="card-number">02</span></article>
-        <article className="skill-card"><div className="skill-icon teal">⌘</div><h3>Tools & workflow</h3><p>Better tools. Better building.</p><div className="skill-tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>IntelliJ IDEA</span></div><span className="card-number">03</span></article>
-        <article className="skill-card"><div className="skill-icon amber">◇</div><h3>Core foundations</h3><p>Good software starts with good thinking.</p><div className="skill-tags"><span>Object-Oriented Programming</span><span>Software Engineering</span><span>Problem Solving</span></div><span className="card-number">04</span></article>
-      </div>
-    </div></section>
+    <Skills/>
 
     <section id="projects" className="section container reveal">
       <div className="section-label"><span>03 / SELECTED WORK</span><span className="label-line"></span></div>
