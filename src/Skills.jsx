@@ -7,7 +7,7 @@ const groups = [
     ['HTML', 'html'], ['CSS', 'css'], ['JavaScript', 'javascript'], ['React', 'react'],
   ] },
   { title: 'Backend & languages', description: 'The logic that makes it all work.', icon: 'backend', tone: 'purple', skills: [
-    ['Java', 'java'], ['Python', 'python'], ['JavaScript', 'javascript'],
+    ['Java', 'java'], ['Python', 'python'], ['JavaScript', 'javascript'], ['PHP', 'php'], ['Node.js', 'nodejs'],
   ] },
   { title: 'Tools & workflow', description: 'Better tools. Better building.', icon: 'tools', tone: 'teal', skills: [
     ['Git', 'git'], ['GitHub', 'github'], ['VS Code', 'vscode'], ['IntelliJ IDEA', 'intellij'],

@@ -22,6 +22,12 @@ export function SkillIcon({ name, className = '' }) {
     case 'java':
       artwork = <><g fill="none" strokeWidth="1.3"><path d="M14 1c4 4-8 5-3 9M17 4c-6 3 2 3-3 6" stroke="#ed7957"/><path d="M5 12c0-2 12-2 12 0s-12 2-12 0Zm1 1 1 5c1 2 8 2 9 0l1-5m1-1c5-1 4 5 0 5M5 20c-5 2 15 4 16 0" stroke="#79a9d4"/></g></>;
       break;
+    case 'php':
+      artwork = <><ellipse cx="12" cy="12" rx="11.5" ry="7" fill="#8993be"/><text x="3" y="15" fontFamily="Arial,sans-serif" fontStyle="italic" fontWeight="700" fontSize="9.5" fill="#151725" stroke="none">php</text></>;
+      break;
+    case 'nodejs':
+      artwork = <><path d="m12 1 9.5 5.5v11L12 23l-9.5-5.5v-11Z" fill="#68a063"/><text x="4.5" y="16" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="10" fill="#fff" stroke="none">JS</text></>;
+      break;
     case 'git':
       artwork = <><rect x="3.5" y="3.5" width="17" height="17" rx="2" transform="rotate(45 12 12)" fill="#f05032"/><path d="m8 6 8 8m-7-7v11" stroke="#fff" strokeWidth="1.6"/><g fill="#fff"><circle cx="9" cy="7" r="1.7"/><circle cx="16" cy="14" r="1.7"/><circle cx="9" cy="18" r="1.7"/></g></>;
       break;
