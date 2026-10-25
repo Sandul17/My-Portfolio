@@ -1,0 +1,48 @@
+/* Motion owns transforms; CSS handles color, texture, and accessible fallbacks. */
+.nav-contact { display: inline-flex; align-items: center; gap: 16px; }
+.nav-contact .lucide { width: 18px; height: 18px; }
+.menu-toggle .lucide { width: 18px; height: 18px; }
+.back-top .lucide { width: 16px; height: 16px; }
+.button .lucide { width: 18px; height: 18px; }
+.hero-asterisk .lucide { width: .92em; height: .92em; }
+.scroll-circle .lucide { width: 13px; height: 13px; }
+.magnetic-link { will-change: transform; }
+.motion-card { transform-style: preserve-3d; will-change: transform; }
+.motion-card.skill-card:hover { transform: none; }
+.card-spotlight { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; border-radius: inherit; transition: opacity .3s; }
+.motion-card:hover .card-spotlight { opacity: 1; }
+.skills-grid, .projects-grid { position: relative; }
+.project-card { animation: none; }
+.project-visual { transition: filter .3s, box-shadow .3s; }
+.project-visual:hover { box-shadow: inset 0 0 55px #b09bff0d; }
+.hero h1 { overflow: visible; }
+.hero .gradient-text { background-size: 180% 100%; animation: chromatic-shift 9s ease-in-out infinite alternate; }
+.three-scene { position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity 1s ease; }
+.three-scene canvas { display: block; touch-action: pan-y; }
+.has-three-scene .three-scene { opacity: 1; }
+.has-three-scene .digital-orb { opacity: 0; }
+.digital-orb { transition: opacity 1s, translate .6s; }
+.orb-coordinate, .orb-edition { z-index: 2; pointer-events: none; }
+.orb-tech, .orb-code-card, .orb-label { z-index: 3; }
+.has-three-scene .orb-halo { background: radial-gradient(ellipse,#695bc43b,transparent 70%); }
+.hero-art::after { content: ''; position: absolute; z-index: -1; inset: 10%; border: 1px solid #b6a4ff0d; border-radius: 50%; box-shadow: 0 0 80px #a294ff07; pointer-events: none; }
+.skills-section .skill-card .card-spotlight { z-index: 2; }
+.skill-list { position: relative; z-index: 3; }
+.skill-chip .lucide { color: #d9bd82; }
+.contact-form .lucide { width: 17px; height: 17px; }
+.send-icon-spin { animation: send-spin 1s linear infinite; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+dialog .dialog-inner { overscroll-behavior: contain; }
+@keyframes chromatic-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@keyframes send-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  nav .nav-contact { justify-content: center; gap: 12px; }
+  .hero-asterisk .lucide { width: .9em; height: .9em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-link, .motion-card { will-change: auto; }
+  .card-spotlight { display: none; }
+  .three-scene { display: none; }
+  .digital-orb { opacity: 1; }
+  .has-three-scene .digital-orb { opacity: 1; }
+}

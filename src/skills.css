@@ -79,14 +79,6 @@
 .skill-brand-react .skill-svg { transform-origin: center; }
 .skill-chip:hover .skill-brand-react .skill-svg { transform: rotate(90deg) scale(1.12); }
 
-@media (prefers-reduced-motion: no-preference) {
-  .skills-animated .skill-card:not(.skill-visible) { opacity: 0; translate: 0 24px; }
-  .skills-animated .skill-card.skill-visible { animation: skill-card-enter .65s cubic-bezier(.2,.75,.3,1) var(--card-delay) both; }
-  .skills-animated .skill-visible .skill-chip { animation: skill-chip-enter .45s ease var(--skill-delay) both; }
-  @keyframes skill-card-enter { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
-  @keyframes skill-chip-enter { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
-}
-
 @media (max-width: 850px) {
   .skills-section .skill-card { padding: 23px; }
   .skills-section .skill-card > p { min-height: 20px; }

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { profile } from './profile';
+import { ArrowUpRight, LoaderCircle } from 'lucide-react';
 
 export function ContactLinks() {
   return <div id="contact-links" className="contact-links">
@@ -63,7 +64,7 @@ export function ContactForm() {
     <div className="form-field"><label htmlFor="subject">What’s on your mind?</label><select id="subject" name="subject" disabled={sending}><option>Let’s collaborate</option><option>Internship or job opportunity</option><option>Project discussion</option><option>Just saying hello</option></select></div>
     <div className="form-field"><label htmlFor="message">Your message</label><textarea id="message" name="message" placeholder="Tell me a little about your idea…" rows={4} required minLength={10} maxLength={5000} disabled={sending}/></div>
     <div className="honeypot" aria-hidden="true"><label htmlFor="website">Leave this field empty</label><input id="website" name="_honey" tabIndex={-1} autoComplete="off"/></div>
-    <button className="button button-primary send-button disabled:opacity-60" type="submit" disabled={sending}>{sending ? 'Sending your message…' : 'Let’s start a conversation'}<span aria-hidden="true">↗</span></button>
+    <button className="button button-primary send-button disabled:opacity-60" type="submit" disabled={sending}>{sending ? 'Sending your message…' : 'Let’s start a conversation'}{sending ? <LoaderCircle className="send-icon-spin" aria-hidden="true"/> : <ArrowUpRight aria-hidden="true"/>}</button>
     <p className="form-note">Delivered securely with <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a>. Your details are used to reply to your message.</p>
     <p id="form-status" className={`form-status ${status.type}`} role={status.type === 'error' ? 'alert' : 'status'} aria-live="polite">{status.message}</p>
   </form>;

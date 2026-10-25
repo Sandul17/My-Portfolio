@@ -1,6 +1,6 @@
 # Sandul Hansana — Personal Portfolio
 
-A responsive React and Tailwind CSS portfolio with a premium navy theme, blue and purple accents, a floating navigation bar, an animated SVG orb, reading progress, accessible project dialogs, project filtering, a mobile menu, contact form, and downloadable PDF résumé.
+A responsive React and Tailwind CSS portfolio with a premium navy theme, an interactive iridescent 3D sculpture, spring animations, magnetic buttons, card tilt and spotlights, smooth scrolling, accessible project dialogs, animated project filtering, contact form, and downloadable PDF résumé.
 
 ## Development
 
@@ -15,7 +15,20 @@ Create the production build with `npm run build`, and preview it with `npm run p
 
 ## Content
 
-Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero and SVG illustration are in `src/Hero.jsx`, and skill groups and icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css` and `src/skills.css`. Animations and pointer effects respect reduced-motion preferences.
+Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, and `src/effects.css`.
+
+## Frontend libraries
+
+| Library | Role |
+| --- | --- |
+| [Motion for React](https://motion.dev/docs/react) | Spring entrances, viewport reveals, card tilt, magnetic buttons, reading progress, and project-filter transitions. |
+| [Lenis](https://github.com/darkroomengineering/lenis) | Smooth desktop wheel and anchor scrolling; pauses when a project dialog opens. |
+| [React Three Fiber](https://r3f.docs.pmnd.rs/) + [Drei](https://drei.docs.pmnd.rs/) + [Three.js](https://threejs.org/) | Procedurally lit, interactive 3D hero sculpture with no external model or environment downloads. |
+| [Lucide React](https://lucide.dev/guide/react/) | Consistent navigation, action, and foundation-skill icons. Technology brand artwork remains local SVG. |
+
+`src/Experience.jsx` configures Motion and Lenis. Reusable animation components live in `src/Animated.jsx`; `src/HeroScene.jsx` holds the lazy-loaded 3D scene.
+
+The 3D bundle is not requested for narrow screens, reduced-motion preferences, unsupported WebGL, or data-saving mode. Those visitors see the SVG hero instead. The scene pauses offscreen and in background tabs. Pointer effects and smooth scrolling respect reduced-motion preferences, including changes made while the page is open.
 
 All education, skills, projects, and contact details come from information supplied by Sandul. No internship, employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
 

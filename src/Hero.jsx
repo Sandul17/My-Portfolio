@@ -1,4 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import { useMotionPreference } from './motion-preferences';
+import * as m from 'motion/react-m';
+import { ArrowDown, ArrowUpRight, Download, Sparkles } from 'lucide-react';
+import { MagneticLink } from './Animated';
+import { SceneLoader } from './SceneLoader';
 import { SkillIcon } from './SkillIcon';
 
 function DigitalOrb() {
@@ -25,6 +30,11 @@ function DigitalOrb() {
 
 export function Hero({ localTime }) {
   const visual = useRef(null);
+  const reduced = useMotionPreference();
+  const [sceneReady, setSceneReady] = useState(false);
+  const ready = useCallback(() => setSceneReady(true), []);
+  const unavailable = useCallback(() => setSceneReady(false), []);
+  const entrance = { hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } };
   const handlePointer = event => {
     if (!window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) return;
     const rect = event.currentTarget.getBoundingClientRect();
@@ -32,16 +42,16 @@ export function Hero({ localTime }) {
     visual.current.style.setProperty('--orb-y', `${(event.clientY - rect.top - rect.height / 2) * .025}px`);
   };
   return <section id="home" className="hero container" onPointerMove={handlePointer} onPointerLeave={() => { visual.current?.style.setProperty('--orb-x', '0px'); visual.current?.style.setProperty('--orb-y', '0px'); }}>
-    <div className="hero-content">
-      <div className="hero-intro"><span className="intro-dash"/> THE PORTFOLIO OF SANDUL HANSANA</div>
-      <h1>Ideas into<br/><span className="gradient-text">real impact.</span><span className="hero-asterisk" aria-hidden="true">✳</span></h1>
-      <p className="hero-role">Software Engineering Undergraduate.<br/><span>Aspiring Full-Stack Developer.</span></p>
-      <p className="hero-description">Curiosity drives me. Code is how I build.<br/>Creating thoughtful digital experiences, one idea at a time.</p>
-      <div className="hero-actions"><a className="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="assets/sandul-hansana-cv.pdf" download>Download CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a></div>
-      <div className="hero-profile-line"><span className="status-dot"/><span>Fourth-year at <strong>IIT</strong></span><i/><span>Based in Sri Lanka <span aria-hidden="true">↗</span></span></div>
-    </div>
-    <div className="hero-art" ref={visual} role="img" aria-label="Animated wireframe globe surrounded by development tools">
-      <div className="orb-halo"/><div className="orb-grid"/><DigitalOrb/>
+    <m.div className="hero-content" initial={reduced ? false : "hidden"} animate="visible" variants={{ visible: { transition: { staggerChildren: .09, delayChildren: .12 } } }}>
+      <m.div className="hero-intro" variants={entrance}><span className="intro-dash"/> THE PORTFOLIO OF SANDUL HANSANA</m.div>
+      <m.h1 variants={entrance}>Ideas into<br/><span className="gradient-text">real impact.</span><span className="hero-asterisk" aria-hidden="true"><Sparkles/></span></m.h1>
+      <m.p className="hero-role" variants={entrance}>Software Engineering Undergraduate.<br/><span>Aspiring Full-Stack Developer.</span></m.p>
+      <m.p className="hero-description" variants={entrance}>Curiosity drives me. Code is how I build.<br/>Creating thoughtful digital experiences, one idea at a time.</m.p>
+      <m.div className="hero-actions" variants={entrance}><MagneticLink className="button button-primary" href="#projects">Explore my work <ArrowUpRight aria-hidden="true"/></MagneticLink><MagneticLink className="button button-secondary" href="assets/sandul-hansana-cv.pdf" download>Download CV <Download aria-hidden="true"/></MagneticLink></m.div>
+      <m.div className="hero-profile-line" variants={entrance}><span className="status-dot"/><span>Fourth-year at <strong>IIT</strong></span><i/><span>Based in Sri Lanka <span aria-hidden="true">↗</span></span></m.div>
+    </m.div>
+    <div className={`hero-art ${sceneReady ? "has-three-scene" : ""}`} ref={visual} role="img" aria-label="Iridescent orbital sculpture surrounded by development tools">
+      <div className="orb-halo"/><div className="orb-grid"/><DigitalOrb/><SceneLoader onReady={ready} onUnavailable={unavailable}/>
       <span className="orb-coordinate">CURIOUS MIND. CREATIVE DEVELOPMENT.</span>
       <div className="orb-tech orb-tech-react"><SkillIcon name="react"/><span>React</span></div>
       <div className="orb-tech orb-tech-node"><SkillIcon name="nodejs"/><span>Node.js</span></div>
@@ -49,7 +59,7 @@ export function Hero({ localTime }) {
       <div className="orb-label"><span>✦</span><div>Built with intention.<small>Always a work in progress.</small></div></div>
       <span className="orb-edition">SH / 2026 <span>01</span></span>
     </div>
-    <div className="hero-bottom"><a className="scroll-hint" href="#about"><span className="scroll-circle">↓</span> A LITTLE MORE ABOUT ME</a><span className="hero-local"><span className="status-dot"/> SRI LANKA <span>{localTime}</span></span><span className="hero-index">SCROLL TO DISCOVER <span>↘</span></span></div>
+    <div className="hero-bottom"><a className="scroll-hint" href="#about"><span className="scroll-circle"><ArrowDown aria-hidden="true"/></span> A LITTLE MORE ABOUT ME</a><span className="hero-local"><span className="status-dot"/> SRI LANKA <span>{localTime}</span></span><span className="hero-index">SCROLL TO DISCOVER <span>↘</span></span></div>
   </section>;
 }
 

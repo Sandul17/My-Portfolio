@@ -1,7 +1,12 @@
 import React from 'react';
+import { Boxes, CodeXml, Lightbulb, Network, Server, Wrench } from 'lucide-react';
+
+const foundationIcons = { frontend: CodeXml, backend: Server, tools: Wrench, oop: Boxes, engineering: Network, problem: Lightbulb };
 
 // Local SVGs keep skill icons crisp without external requests or icon fonts.
 export function SkillIcon({ name, className = '' }) {
+  const Foundation = foundationIcons[name];
+  if (Foundation) return <Foundation className={`skill-svg skill-svg-outline ${className}`} aria-hidden="true" focusable="false"/>;
   let artwork;
   switch (name) {
     case 'html':
@@ -39,21 +44,6 @@ export function SkillIcon({ name, className = '' }) {
       break;
     case 'intellij':
       artwork = <><path d="M0 0h24v24H0Z" fill="#eb4d88"/><path d="m0 8 11-8h13L12 24H0Z" fill="#8264ef"/><path d="m9 0 15 8v16L7 12Z" fill="#318de2"/><rect x="3" y="3" width="18" height="18" fill="#11121a"/><text x="5.2" y="13" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="9" fill="#fff" stroke="none">IJ</text><path d="M5.5 18h6" stroke="#fff" strokeWidth="1.5"/></>;
-      break;
-    case 'frontend':
-      artwork = <><path d="M8 5 2 12l6 7m8-14 6 7-6 7m-3-16-2 18"/></>;
-      break;
-    case 'backend':
-      artwork = <><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.1M7 17.5h.1m7-11h3m-3 11h3M12 10v4"/></>;
-      break;
-    case 'tools':
-      artwork = <><path d="m14 6 4-4a6 6 0 0 1-7 8L4 21l-3-3 10-8a6 6 0 0 1 7-8l-4 4Z"/></>;
-      break;
-    case 'oop':
-      artwork = <><path d="m12 2 9 5v10l-9 5-9-5V7Zm0 10L3 7m9 5 9-5m-9 5v10"/></>;
-      break;
-    case 'engineering':
-      artwork = <><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6a3 3 0 0 1 3 3v6M6 9v6a3 3 0 0 0 3 3h6m-3-6h.1"/></>;
       break;
     default:
       artwork = <><path d="M9 18h6m-5 3h4M8 14a7 7 0 1 1 8 0c-1 1-1 2-1 4H9c0-2 0-3-1-4Z"/><path d="m10 9 2 2 3-4"/></>;
