@@ -4,6 +4,7 @@ import { ProjectDialog } from './ProjectDialog';
 import { projects } from './profile';
 import { TicketCode } from './TicketCode';
 import { Skills } from './Skills';
+import { Journey } from './Journey';
 import { Hero, TechRibbon } from './Hero';
 import { AnimatePresence } from 'motion/react';
 import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react';
@@ -34,7 +35,7 @@ export default function App() {
       <a className="brand" href="#home" aria-label="Sandul Hansana home"><span className="brand-mark">s<span>.</span></span><span>sandul<span className="muted">.dev</span></span></a>
       <button className="menu-toggle" onClick={() => setNavOpen(!navOpen)} aria-expanded={navOpen} aria-controls="navigation" aria-label={navOpen ? "Close navigation" : "Open navigation"}>{navOpen ? <X aria-hidden="true"/> : <Menu aria-hidden="true"/>}</button>
       <nav id="navigation" className={navOpen ? "is-open" : ""} onClick={(event) => { if(event.target.closest("a")) setNavOpen(false); }} aria-label="Main navigation">
-        <a href="#home" className="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a>
+        <a href="#home" className="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Experience</a>
         <a className="nav-contact" href="#contact">Let’s talk <ArrowUpRight aria-hidden="true"/></a>
       </nav>
     </div>
@@ -48,7 +49,7 @@ export default function App() {
       <div className="section-label"><span>01 / ABOUT ME</span><span className="label-line"></span></div>
       <div className="about-layout">
         <div><h2>A curious mind.<br/><span className="text-muted">A builder at heart.</span></h2><div className="about-monogram" aria-hidden="true"><div className="monogram-grid"></div><span>SH<span className="monogram-period">.</span></span><div className="monogram-caption">A BUILDER AT HEART <span>↗</span></div></div></div>
-        <div className="about-copy"><span className="little-label">A LITTLE ABOUT THE PERSON BEHIND THE CODE</span><h3>Hi, I’m Sandul Hansana.<br/>A learner, a thinker, a builder.</h3><p>I’m a fourth-year Software Engineering undergraduate at the <strong>Informatics Institute of Technology (IIT)</strong>, passionate about software development, web technologies, and solving real-world problems through innovative solutions.</p><p>I enjoy building user-friendly applications, exploring new technologies, and continuously sharpening my technical and problem-solving skills. My journey is about connecting what I learn with things that make a difference.</p><div className="about-values"><span><i>↗</i> Always learning</span><span><i>◇</i> Detail-oriented</span><span><i>⌘</i> Problem-driven</span></div><a className="text-link" href="#contact">Let’s build something together <span>↗</span></a></div>
+        <div className="about-copy"><span className="little-label">A LITTLE ABOUT THE PERSON BEHIND THE CODE</span><h3>Hi, I’m Sandul Hansana.<br/>A learner, a thinker, a builder.</h3><p>I’m a fourth-year Software Engineering undergraduate at the <strong>Informatics Institute of Technology (IIT)</strong>, passionate about software development, web technologies, and solving real-world problems through innovative solutions.</p><p>I’ve completed internships at Sri Lanka Telecom and the Prime Minister’s Office Sri Lanka. I enjoy building user-friendly applications, exploring new technologies, and connecting what I learn with practical experience.</p><div className="about-values"><span><i>↗</i> Always learning</span><span><i>◇</i> Detail-oriented</span><span><i>⌘</i> Problem-driven</span></div><a className="text-link" href="#contact">Let’s build something together <span>↗</span></a></div>
       </div>
     </RevealSection>
 
@@ -74,11 +75,7 @@ export default function App() {
       </AnimatePresence></div>
     </RevealSection>
 
-    <RevealSection id="journey" className="section journey-section"><div className="container">
-      <div className="section-label"><span>04 / THE JOURNEY</span><span className="label-line"></span></div>
-      <div className="journey-layout"><div><h2>Growing with<br/><span className="text-muted">every step.</span></h2><p className="journey-intro">A foundation in software engineering.<br/>A future full of possibilities.</p><div className="journey-note"><span>✦</span> The best part? There’s always more to learn.</div></div>
-      <div className="timeline"><article className="timeline-item"><span className="timeline-dot"></span><div className="timeline-top"><span className="little-label">EDUCATION</span><span className="current-badge">CURRENT</span></div><h3>BEng (Hons) Software Engineering</h3><p className="institution">Informatics Institute of Technology (IIT)</p><p>Fourth-Year Undergraduate</p><div className="timeline-details"><span>Software development</span><span>Academic research</span><span>Engineering principles</span></div></article><article className="timeline-item"><span className="timeline-dot secondary-dot"></span><span className="little-label">EXPERIENCE & DEVELOPMENT</span><h3>Building through hands-on projects</h3><p>Applying academic knowledge through research and software projects, with a focus on practical problem solving and user-friendly applications.</p><a className="text-link" href="#projects">Explore my projects <span>↗</span></a></article></div></div>
-    </div></RevealSection>
+    <Journey/>
 
     <RevealSection id="contact" className="section container">
       <div className="section-label"><span>05 / LET’S CONNECT</span><span className="label-line"></span></div>

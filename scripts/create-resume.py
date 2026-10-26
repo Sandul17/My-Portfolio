@@ -3,6 +3,8 @@
 No third-party Python dependencies are required.
 """
 from pathlib import Path
+import json
+from datetime import datetime
 from textwrap import wrap
 
 PAGE_W, PAGE_H = 595, 842
@@ -25,7 +27,7 @@ def paragraph(value,y,width=97,size=9.2,leading=14):
 def section(title,y):
     text(title.upper(),44,y,9,True,(.30,.29,.60))
     line(44,y-8,551,y-8)
-    return y-29
+    return y-24
 
 ops.append('0.055 0.071 0.12 rg 0 696 595 146 re f')
 text('SANDUL HANSANA',44,791,25,True,(.96,.97,1))
@@ -34,24 +36,38 @@ text('Sri Lanka  |  sandulhansana@gmail.com',44,741,9,False,(.82,.85,.93))
 text('GitHub: github.com/Sandul17',44,719,8.5,False,(.75,.78,.92))
 text('LinkedIn: sandul-hansana-vas-gunawardana-b30279255',240,719,8,False,(.75,.78,.92))
 links += [((44,736,290,750),'mailto:sandulhansana@gmail.com'),((44,714,224,728),'https://github.com/Sandul17'),((240,714,551,728),'https://www.linkedin.com/in/sandul-hansana-vas-gunawardana-b30279255/')]
+experience = json.loads((Path(__file__).resolve().parents[1]/'src/data/experience.json').read_text())
+format_month = lambda value: datetime.strptime(value, '%Y-%m').strftime('%b %Y')
 y=section('Profile',669)
-y=paragraph('Fourth-year Software Engineering undergraduate at Informatics Institute of Technology (IIT), passionate about software development, web technologies, and solving real-world problems. Enjoys building user-friendly applications, exploring new technologies, and improving technical and problem-solving skills.',y)
-y=section('Education',y-19)
-text('BEng (Hons) Software Engineering',44,y,11,True);y-=17
-text('Informatics Institute of Technology (IIT), Sri Lanka',44,y,9.5);y-=16
-text('Fourth-Year Undergraduate',44,y,9);y-=31
+y=paragraph("Fourth-year Software Engineering undergraduate at IIT with internship experience at Sri Lanka Telecom and the Prime Minister's Office Sri Lanka. Passionate about web technologies, user-friendly applications, and practical problem solving.",y,width=102,leading=13)
+y=section('Experience',y-10)
+for job in experience:
+    text(job['role'],44,y,10.5,True)
+    text(f"{format_month(job['startDate'])} - {format_month(job['endDate'])}",445,y,8.5,False,(.38,.40,.54))
+    y-=16
+    text(f"{job['company']} | {job['employmentType']}",44,y,9.2)
+    links.append(((44,y-3,400,y+10),job['companyUrl']))
+    y-=15
+    text(f"{job['location']} | {job['workplace']}",44,y,8.5,False,(.40,.44,.52))
+    y-=25
+
+y=section('Education',y)
+text('BEng (Hons) Software Engineering',44,y,10.5,True);y-=16
+text('Informatics Institute of Technology (IIT), Sri Lanka | Fourth-Year Undergraduate',44,y,9.2);y-=23
+
 y=section('Technical skills',y)
-for label,value in [('Frontend','HTML, CSS, JavaScript, React'),('Backend & languages','Java, Python, JavaScript'),('Tools','Git, GitHub, Visual Studio Code, IntelliJ IDEA'),('Foundations','Object-Oriented Programming, Software Engineering, Problem Solving')]:
-    text(label,44,y,9,True);text(value,157,y,8.8);y-=18
-y=section('Projects',y-15)
-text('PlotGuard - Final Year Research Project',44,y,10.5,True);y-=17
-y=paragraph('Research-based software solution applying modern technologies to a real-world problem through an intelligent and user-friendly system, developed as part of the final-year degree.',y,width=103,size=9)
-y-=15
-text('Interactive Ticket Booking System',44,y,10.5,True);y-=17
-y=paragraph('Console-based application to purchase seats, cancel reservations, search tickets, display seating arrangements, and calculate total ticket sales.',y,width=103,size=9)
-y-=15
-text('Personal Portfolio Website',44,y,10.5,True);y-=17
-y=paragraph('Responsive portfolio showcasing technical skills, academic projects, educational background, and professional development. Built with React, Tailwind CSS, and JavaScript.',y,width=103,size=9)
+for label,value in [('Frontend','HTML, CSS, JavaScript, React'),('Backend & languages','Java, Python, JavaScript, PHP, Node.js'),('Tools','Git, GitHub, Visual Studio Code, IntelliJ IDEA'),('Foundations','Object-Oriented Programming, Software Engineering, Problem Solving')]:
+    text(label,44,y,9,True);text(value,157,y,8.8);y-=16
+
+y=section('Projects',y-12)
+text('PlotGuard - Final Year Research Project',44,y,10.5,True);y-=16
+y=paragraph('Final-year research project applying modern software technologies to a real-world problem through an intelligent and user-friendly system.',y,width=103,size=9,leading=12.5)
+y-=11
+text('Interactive Ticket Booking System',44,y,10.5,True);y-=16
+y=paragraph('Console application to purchase seats, cancel reservations, search tickets, display seating arrangements, and calculate total ticket sales.',y,width=103,size=9,leading=12.5)
+y-=11
+text('Personal Portfolio Website',44,y,10.5,True);y-=16
+y=paragraph('Responsive portfolio showcasing skills, projects, education, and experience. Built with React, Tailwind CSS, and JavaScript.',y,width=103,size=9,leading=12.5)
 line(44,51,551,51)
 text('SANDUL HANSANA',44,34,7,True,(.45,.49,.57))
 text('SOFTWARE ENGINEERING PORTFOLIO',352,34,7,False,(.45,.49,.57))
@@ -78,4 +94,4 @@ for offset in offsets[1:]:pdf+=f'{offset:010d} 00000 n \n'.encode()
 pdf+=f'trailer\n<< /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n'.encode()
 out=Path(__file__).resolve().parents[1]/'public/assets/sandul-hansana-cv.pdf'
 out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(pdf)
-print(f'Created {out.name}: {len(pdf)} bytes, one page, three clickable contact links.')
+print(f'Created {out.name}: {len(pdf)} bytes, one page, {len(links)} clickable links; content ends at y={y}.')

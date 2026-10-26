@@ -7,7 +7,7 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R] >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R 10 0 R 11 0 R] >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -16,7 +16,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 3748 >>
+<< /Length 4357 >>
 stream
 0.055 0.071 0.12 rg 0 696 595 146 re f
 BT /F2 25 Tf 0.96 0.97 1 rg 1 0 0 1 44 791 Tm (SANDUL HANSANA) Tj ET
@@ -26,36 +26,44 @@ BT /F1 8.5 Tf 0.75 0.78 0.92 rg 1 0 0 1 44 719 Tm (GitHub: github.com/Sandul17) 
 BT /F1 8 Tf 0.75 0.78 0.92 rg 1 0 0 1 240 719 Tm (LinkedIn: sandul-hansana-vas-gunawardana-b30279255) Tj ET
 BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 669 Tm (PROFILE) Tj ET
 0.85 0.88 0.93 RG 0.6 w 44 661 m 551 661 l S
-BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 640 Tm (Fourth-year Software Engineering undergraduate at Informatics Institute of Technology \(IIT\),) Tj ET
-BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 626 Tm (passionate about software development, web technologies, and solving real-world problems. Enjoys) Tj ET
-BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 612 Tm (building user-friendly applications, exploring new technologies, and improving technical and) Tj ET
-BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 598 Tm (problem-solving skills.) Tj ET
-BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 565 Tm (EDUCATION) Tj ET
-0.85 0.88 0.93 RG 0.6 w 44 557 m 551 557 l S
-BT /F2 11 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 536 Tm (BEng \(Hons\) Software Engineering) Tj ET
-BT /F1 9.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 519 Tm (Informatics Institute of Technology \(IIT\), Sri Lanka) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 503 Tm (Fourth-Year Undergraduate) Tj ET
-BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 472 Tm (TECHNICAL SKILLS) Tj ET
-0.85 0.88 0.93 RG 0.6 w 44 464 m 551 464 l S
-BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 443 Tm (Frontend) Tj ET
-BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 443 Tm (HTML, CSS, JavaScript, React) Tj ET
-BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 425 Tm (Backend & languages) Tj ET
-BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 425 Tm (Java, Python, JavaScript) Tj ET
-BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 407 Tm (Tools) Tj ET
-BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 407 Tm (Git, GitHub, Visual Studio Code, IntelliJ IDEA) Tj ET
-BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 389 Tm (Foundations) Tj ET
-BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 389 Tm (Object-Oriented Programming, Software Engineering, Problem Solving) Tj ET
-BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 356 Tm (PROJECTS) Tj ET
-0.85 0.88 0.93 RG 0.6 w 44 348 m 551 348 l S
-BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 327 Tm (PlotGuard - Final Year Research Project) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 310 Tm (Research-based software solution applying modern technologies to a real-world problem through an) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 296 Tm (intelligent and user-friendly system, developed as part of the final-year degree.) Tj ET
-BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 267 Tm (Interactive Ticket Booking System) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 250 Tm (Console-based application to purchase seats, cancel reservations, search tickets, display seating) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 236 Tm (arrangements, and calculate total ticket sales.) Tj ET
-BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 207 Tm (Personal Portfolio Website) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 190 Tm (Responsive portfolio showcasing technical skills, academic projects, educational background, and) Tj ET
-BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 176 Tm (professional development. Built with React, Tailwind CSS, and JavaScript.) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 645 Tm (Fourth-year Software Engineering undergraduate at IIT with internship experience at Sri Lanka Telecom) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 632 Tm (and the Prime Minister's Office Sri Lanka. Passionate about web technologies, user-friendly) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 619 Tm (applications, and practical problem solving.) Tj ET
+BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 596 Tm (EXPERIENCE) Tj ET
+0.85 0.88 0.93 RG 0.6 w 44 588 m 551 588 l S
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 572 Tm (Software Engineer Intern) Tj ET
+BT /F1 8.5 Tf 0.38 0.4 0.54 rg 1 0 0 1 445 572 Tm (Mar 2026 - Sep 2026) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 556 Tm (Sri Lanka Telecom | Internship) Tj ET
+BT /F1 8.5 Tf 0.4 0.44 0.52 rg 1 0 0 1 44 541 Tm (Colombo, Western Province, Sri Lanka | On-site) Tj ET
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 516 Tm (Software Developer Intern) Tj ET
+BT /F1 8.5 Tf 0.38 0.4 0.54 rg 1 0 0 1 445 516 Tm (Jul 2025 - Jan 2026) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 500 Tm (Prime Minister’s Office Sri Lanka | Internship) Tj ET
+BT /F1 8.5 Tf 0.4 0.44 0.52 rg 1 0 0 1 44 485 Tm (58, Sir Ernest De Silva Mawatha, Colombo 07, Sri Lanka | On-site) Tj ET
+BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 460 Tm (EDUCATION) Tj ET
+0.85 0.88 0.93 RG 0.6 w 44 452 m 551 452 l S
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 436 Tm (BEng \(Hons\) Software Engineering) Tj ET
+BT /F1 9.2 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 420 Tm (Informatics Institute of Technology \(IIT\), Sri Lanka | Fourth-Year Undergraduate) Tj ET
+BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 397 Tm (TECHNICAL SKILLS) Tj ET
+0.85 0.88 0.93 RG 0.6 w 44 389 m 551 389 l S
+BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 373 Tm (Frontend) Tj ET
+BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 373 Tm (HTML, CSS, JavaScript, React) Tj ET
+BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 357 Tm (Backend & languages) Tj ET
+BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 357 Tm (Java, Python, JavaScript, PHP, Node.js) Tj ET
+BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 341 Tm (Tools) Tj ET
+BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 341 Tm (Git, GitHub, Visual Studio Code, IntelliJ IDEA) Tj ET
+BT /F2 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 325 Tm (Foundations) Tj ET
+BT /F1 8.8 Tf 0.19 0.23 0.3 rg 1 0 0 1 157 325 Tm (Object-Oriented Programming, Software Engineering, Problem Solving) Tj ET
+BT /F2 9 Tf 0.3 0.29 0.6 rg 1 0 0 1 44 297 Tm (PROJECTS) Tj ET
+0.85 0.88 0.93 RG 0.6 w 44 289 m 551 289 l S
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 273 Tm (PlotGuard - Final Year Research Project) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 257 Tm (Final-year research project applying modern software technologies to a real-world problem through an) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 244.5 Tm (intelligent and user-friendly system.) Tj ET
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 221.0 Tm (Interactive Ticket Booking System) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 205.0 Tm (Console application to purchase seats, cancel reservations, search tickets, display seating) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 192.5 Tm (arrangements, and calculate total ticket sales.) Tj ET
+BT /F2 10.5 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 169.0 Tm (Personal Portfolio Website) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 153.0 Tm (Responsive portfolio showcasing skills, projects, education, and experience. Built with React, Tailwind) Tj ET
+BT /F1 9 Tf 0.19 0.23 0.3 rg 1 0 0 1 44 140.5 Tm (CSS, and JavaScript.) Tj ET
 0.85 0.88 0.93 RG 0.6 w 44 51 m 551 51 l S
 BT /F2 7 Tf 0.45 0.49 0.57 rg 1 0 0 1 44 34 Tm (SANDUL HANSANA) Tj ET
 BT /F1 7 Tf 0.45 0.49 0.57 rg 1 0 0 1 352 34 Tm (SOFTWARE ENGINEERING PORTFOLIO) Tj ET
@@ -70,20 +78,28 @@ endobj
 9 0 obj
 << /Type /Annot /Subtype /Link /Rect [240 714 551 728] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/in/sandul-hansana-vas-gunawardana-b30279255/) >> >>
 endobj
+10 0 obj
+<< /Type /Annot /Subtype /Link /Rect [44 553 400 566] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/company/166104/) >> >>
+endobj
+11 0 obj
+<< /Type /Annot /Subtype /Link /Rect [44 497 400 510] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/company/109893347/) >> >>
+endobj
 xref
-0 10
+0 12
 0000000000 65535 f 
 0000000015 00000 n 
 0000000064 00000 n 
 0000000121 00000 n 
-0000000285 00000 n 
-0000000382 00000 n 
-0000000484 00000 n 
-0000004284 00000 n 
-0000004427 00000 n 
-0000004567 00000 n 
+0000000299 00000 n 
+0000000396 00000 n 
+0000000498 00000 n 
+0000004907 00000 n 
+0000005050 00000 n 
+0000005190 00000 n 
+0000005373 00000 n 
+0000005527 00000 n 
 trailer
-<< /Size 10 /Root 1 0 R >>
+<< /Size 12 /Root 1 0 R >>
 startxref
-4750
+5684
 %%EOF

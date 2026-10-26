@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sri-lanka-telecom",
+    "role": "Software Engineer Intern",
+    "company": "Sri Lanka Telecom",
+    "companyUrl": "https://www.linkedin.com/company/166104/",
+    "employmentType": "Internship",
+    "startDate": "2026-03",
+    "endDate": "2026-09",
+    "location": "Colombo, Western Province, Sri Lanka",
+    "workplace": "On-site"
+  },
+  {
+    "id": "prime-ministers-office",
+    "role": "Software Developer Intern",
+    "company": "Prime Minister’s Office Sri Lanka",
+    "companyUrl": "https://www.linkedin.com/company/109893347/",
+    "employmentType": "Internship",
+    "startDate": "2025-07",
+    "endDate": "2026-01",
+    "location": "58, Sir Ernest De Silva Mawatha, Colombo 07, Sri Lanka",
+    "workplace": "On-site"
+  }
+]

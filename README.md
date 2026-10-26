@@ -15,7 +15,7 @@ Create the production build with `npm run build`, and preview it with `npm run p
 
 ## Content
 
-Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, and `src/effects.css`.
+Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Internship details live in `src/data/experience.json`, shared by the experience timeline in `src/Journey.jsx` and the PDF résumé generator. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, `src/journey.css`, and `src/effects.css`.
 
 ## Frontend libraries
 
@@ -30,7 +30,7 @@ Contact details and project descriptions are in `src/profile.js`. Add repository
 
 The 3D bundle is not requested for narrow screens, reduced-motion preferences, unsupported WebGL, or data-saving mode. Those visitors see the SVG hero instead. The scene pauses offscreen and in background tabs. Pointer effects and smooth scrolling respect reduced-motion preferences, including changes made while the page is open.
 
-All education, skills, projects, and contact details come from information supplied by Sandul. No internship, employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
+All education, skills, projects, experience, and contact details come from information supplied by Sandul. The internships at Sri Lanka Telecom (March–September 2026) and the Prime Minister’s Office Sri Lanka (July 2025–January 2026) use the titles, dates, employment types, and locations Sandul supplied from LinkedIn. Responsibilities and achievements are omitted because none were provided. No employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
 
 ## Contact form activation
 
