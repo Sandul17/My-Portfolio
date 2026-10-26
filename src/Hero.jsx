@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useMotionPreference } from './motion-preferences';
 import * as m from 'motion/react-m';
-import { ArrowDown, ArrowUpRight, Download, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Download, Search, Sparkles } from 'lucide-react';
 import { MagneticLink } from './Animated';
 import { SceneLoader } from './SceneLoader';
 import { SkillIcon } from './SkillIcon';
@@ -28,7 +28,7 @@ function DigitalOrb() {
   </svg>;
 }
 
-export function Hero({ localTime }) {
+export function Hero({ localTime, onSearch }) {
   const visual = useRef(null);
   const reduced = useMotionPreference();
   const [sceneReady, setSceneReady] = useState(false);
@@ -49,6 +49,7 @@ export function Hero({ localTime }) {
       <m.p className="hero-description" variants={entrance}>Curiosity drives me. Code is how I build.<br/>Creating thoughtful digital experiences, one idea at a time.</m.p>
       <m.div className="hero-actions" variants={entrance}><MagneticLink className="button button-primary" href="#projects">Explore my work <ArrowUpRight aria-hidden="true"/></MagneticLink><MagneticLink className="button button-secondary" href="assets/sandul-hansana-cv.pdf" download>Download CV <Download aria-hidden="true"/></MagneticLink></m.div>
       <m.div className="hero-profile-line" variants={entrance}><span className="status-dot"/><span>Fourth-year at <strong>IIT</strong></span><i/><span>Based in Sri Lanka <span aria-hidden="true">↗</span></span></m.div>
+      <button className="hero-command-hint" type="button" onClick={onSearch}><Search aria-hidden="true"/>Find your way around<kbd>⌘ / Ctrl K</kbd></button>
     </m.div>
     <div className={`hero-art ${sceneReady ? "has-three-scene" : ""}`} ref={visual} role="img" aria-label="Iridescent orbital sculpture surrounded by development tools">
       <div className="orb-halo"/><div className="orb-grid"/><DigitalOrb/><SceneLoader onReady={ready} onUnavailable={unavailable}/>

@@ -1,6 +1,6 @@
 # Sandul Hansana — Personal Portfolio
 
-A responsive React and Tailwind CSS portfolio with a premium navy theme, an interactive iridescent 3D sculpture, spring animations, magnetic buttons, card tilt and spotlights, smooth scrolling, accessible project dialogs, animated project filtering, contact form, and downloadable PDF résumé.
+A responsive React and Tailwind CSS portfolio with a premium navy theme, an interactive iridescent 3D sculpture, spring animations, magnetic buttons, card tilt and spotlights, smooth scrolling, a searchable project explorer, keyboard command menu, contextual contact form, and downloadable PDF résumé.
 
 ## Development
 
@@ -15,14 +15,14 @@ Create the production build with `npm run build`, and preview it with `npm run p
 
 ## Content
 
-Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. Page content is in `src/App.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Internship details live in `src/data/experience.json`, shared by the experience timeline in `src/Journey.jsx` and the PDF résumé generator. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, `src/journey.css`, and `src/effects.css`.
+Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. `src/App.jsx` assembles the page; the profile bento is in `src/About.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Project presentation metadata is in `src/project-data.js`, with shared visuals in `src/ProjectArtwork.jsx`. Internship details live in `src/data/experience.json`, shared by the experience timeline in `src/Journey.jsx` and the PDF résumé generator. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, `src/journey.css`, `src/effects.css`, and `src/application.css`.
 
 ## Frontend libraries
 
 | Library | Role |
 | --- | --- |
 | [Motion for React](https://motion.dev/docs/react) | Spring entrances, viewport reveals, card tilt, magnetic buttons, reading progress, and project-filter transitions. |
-| [Lenis](https://github.com/darkroomengineering/lenis) | Smooth desktop wheel and anchor scrolling; pauses when a project dialog opens. |
+| [Lenis](https://github.com/darkroomengineering/lenis) | Smooth desktop wheel and anchor scrolling; pauses when a project or navigation dialog opens. |
 | [React Three Fiber](https://r3f.docs.pmnd.rs/) + [Drei](https://drei.docs.pmnd.rs/) + [Three.js](https://threejs.org/) | Procedurally lit, interactive 3D hero sculpture with no external model or environment downloads. |
 | [Lucide React](https://lucide.dev/guide/react/) | Consistent navigation, action, and foundation-skill icons. Technology brand artwork remains local SVG. |
 
@@ -35,6 +35,14 @@ All education, skills, projects, experience, and contact details come from infor
 Timeline logos are stored locally in `public/assets/logos/`. The employer logos are the images Sandul supplied from the [Sri Lanka Telecom](https://www.linkedin.com/company/166104/) and [Prime Minister’s Office Sri Lanka](https://www.linkedin.com/company/109893347/) LinkedIn company pages. The IIT logo comes from [IIT’s official website](https://www.iit.ac.lk/wp-content/uploads/2026/08/IIT-Logo-Black.png). Original colors and proportions are preserved on white logo tiles.
 
 The experience explorer has All chapters, Experience, and Education filters, expandable placement details, a scroll-linked timeline, and a sticky career snapshot on larger screens. Details use the confirmed employment types, work arrangements, locations, and education stage; no responsibilities are inferred. Filter buttons and detail toggles support keyboard use, expose their state to assistive technology, and respect reduced-motion settings. The résumé and LinkedIn actions are available beside the timeline.
+
+## Exploring the portfolio
+
+- Press **⌘ K** or **Ctrl K**, or use the header search button, for quick navigation. Search sections and projects, copy the email address, or download the résumé. Use arrow keys and Enter to select, and Escape to close.
+- Filter skills by category or search by technology name. Project search matches titles, descriptions, tags, and features, and combines with Research / Development filters. Both explorers have result counts and reset controls.
+- Project details include an overview, highlights, previous/next navigation, and shareable links such as `/?project=plotguard#projects`. Unknown project IDs are ignored. The share action offers a manual copy field if clipboard access is unavailable.
+- **Discuss this project** opens the contact section with the project attached and preserves other fields already entered. Failed submissions retain the visitor’s draft; successful submissions clear it. Drafts are not stored in browser storage.
+- On phones, a floating navigation dock offers direct access to the main sections. Active section indicators, native dialog focus handling, inline field errors, and reduced-motion behavior support keyboard and assistive-technology users.
 
 ## Contact form activation
 
