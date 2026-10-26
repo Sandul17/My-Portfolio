@@ -1,32 +1,111 @@
-.internship-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid #a89cf129;
-  border-radius: 5px;
-  padding: 4px 8px;
-  color: #bdb0eb;
-  background: #a89cf107;
-  font-size: 8px;
-  line-height: 1.6;
-}
-.internship-badge .lucide { width: 11px; height: 11px; }
-.experience-company { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; color: #ccc5e8; font-size: 14px; line-height: 1.7; transition: color .2s; }
-.experience-company:hover { color: #e2cfff; }
-.experience-company .lucide { width: 14px; height: 14px; flex-shrink: 0; }
-.timeline-item .experience-dates { font-family: 'Space Grotesk',sans-serif; font-size: 12px; color: #a99bcd; margin-top: 12px; }
-.timeline-item .experience-location { display: flex; align-items: flex-start; gap: 7px; font-size: 11px; margin-top: 8px; max-width: 390px; }
-.experience-location .lucide { flex-shrink: 0; width: 13px; height: 13px; margin-top: 3px; }
-.internship-item .timeline-details { margin-top: 12px; }
-.timeline-identity { display: flex; align-items: center; gap: 15px; margin-top: 15px; margin-bottom: 10px; }
-.timeline-logo { display: grid; place-items: center; flex: 0 0 68px; width: 68px; height: 68px; padding: 3px; background: #fff; border: 1px solid #d4c5ff36; border-radius: 12px; box-shadow: 0 5px 18px #0002; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.journey-advanced { background: radial-gradient(ellipse at 0% 0%,#54407b18,transparent 45%),radial-gradient(ellipse at 100% 65%,#234b6c0b,transparent 50%),#0b0e17; }
+.career-layout { display: grid; grid-template-columns: .82fr 1.35fr; align-items: start; gap: 74px; }
+.career-sidebar { position: sticky; top: 122px; }
+.career-kicker { display: flex; align-items: center; gap: 9px; font: 8px monospace; letter-spacing: 1.7px; color: #8795b0; margin-bottom: 22px; }
+.career-kicker .intro-dash { width: 21px; }
+.career-sidebar h2 { font-size: clamp(32px,3.4vw,47px); line-height: 1.17; letter-spacing: -1.9px; }
+.career-sidebar .journey-intro { font-size: 13px; line-height: 1.95; margin-top: 22px; color: #8e9ab1; max-width: 360px; }
+.career-snapshot { background: linear-gradient(135deg,#1b1d2c,#101521); border: 1px solid #b7a7f01b; border-radius: 18px; padding: 21px; margin-top: 30px; overflow: hidden; position: relative; }
+.career-snapshot::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 100% 0%,#a294ff0c,transparent 65%); pointer-events: none; }
+.career-snapshot-title { display: flex; align-items: center; gap: 9px; font-size: 11px; color: #c6bddf; }
+.career-snapshot-title .lucide { width: 16px; height: 16px; color: #b5a0f3; }
+.career-snapshot-mark { margin-left: auto; color: #8a81a5; font-size: 18px; }
+.career-metrics { display: grid; grid-template-columns: 1fr 1fr; padding-block: 25px; gap: 22px; }
+.career-metrics > div + div { border-left: 1px solid #ffffff0c; padding-left: 24px; }
+.career-metrics strong { display: block; font-family: 'Space Grotesk',sans-serif; font-weight: 500; font-size: 45px; letter-spacing: -2px; line-height: 1; color: #ded7f4; }
+.career-metrics span { display: block; font-size: 10px; color: #828ea7; margin-top: 9px; }
+.career-study { border-top: 1px solid #ffffff0d; padding-top: 17px; display: flex; align-items: center; gap: 12px; }
+.career-study-logo { display: grid; place-items: center; width: 43px; height: 43px; padding: 4px; border-radius: 9px; background: #fff; flex-shrink: 0; }
+.career-study-logo img { width: 100%; height: 100%; object-fit: contain; }
+.career-study-label { display: flex; align-items: center; gap: 6px; font: 6px monospace; letter-spacing: 1.1px; color: #8da3a6; }
+.career-study-label .status-dot { width: 4px; height: 4px; }
+.career-study p { font-size: 11px; margin-top: 4px; color: #b9c2d5; }
+.career-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 17px; margin-top: 23px; }
+.career-actions .button { font-size: 10px; padding: 11px 14px; gap: 16px; min-height: 43px; }
+.career-actions .button .lucide { width: 15px; height: 15px; }
+.career-linkedin { display: inline-flex; align-items: center; gap: 7px; color: #aea0d0; font-size: 10px; }
+.career-linkedin .lucide { width: 14px; height: 14px; }
+.career-footnote { margin-top: 21px; color: #626e87; font-size: 9px; display: flex; align-items: center; gap: 11px; }
+.career-footnote > span { color: #a28bc6; font-size: 16px; }
+.career-explorer { min-width: 0; }
+.career-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 27px; }
+.journey-filters { display: flex; gap: 3px; padding: 4px; background: #ffffff02; border: 1px solid #ffffff0f; border-radius: 10px; }
+.journey-filter { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: transparent; border: 0; border-radius: 7px; padding: 9px 12px; color: #7d89a2; font-size: 10px; line-height: 1.5; transition: color .2s; }
+.journey-filter .lucide { width: 13px; height: 13px; position: relative; }
+.journey-filter > span:last-child { position: relative; }
+.journey-filter:hover,.journey-filter.is-active { color: #d7caf6; }
+.journey-filter-pill { position: absolute; inset: 0; z-index: -1; border-radius: 7px; background: #a89aed12; border: 1px solid #b7a0ed24; box-shadow: 0 2px 10px #0001; }
+.journey-result-count { font: 8px monospace; color: #6c7a95; white-space: nowrap; letter-spacing: .8px; }
+.journey-list { position: relative; padding-left: 29px; display: grid; gap: 17px; }
+.journey-rail { position: absolute; left: 5px; top: 36px; bottom: 36px; width: 1px; background: #ffffff0c; overflow: hidden; }
+.journey-rail-fill { position: absolute; inset: 0; transform-origin: top; background: linear-gradient(#95cde0,#a68ae9 60%,#9d9dce); box-shadow: 0 0 9px #a294ff38; }
+.journey-record { --chapter-accent: #a6b7f0; position: relative; min-width: 0; scroll-margin-top: 120px; }
+.journey-record-prime-ministers-office { --chapter-accent: #b69bdf; }
+.journey-record-iit { --chapter-accent: #8bbeb8; }
+.journey-node { position: absolute; left: -29px; top: 32px; height: 11px; width: 11px; display: grid; place-items: center; background: #1a2031; border: 1px solid #68718f; border-radius: 50%; z-index: 2; box-shadow: 0 0 0 5px #0b0e17; transition: border-color .3s,box-shadow .3s; }
+.journey-node > span { width: 3px; height: 3px; border-radius: 50%; background: #79859e; transition: background .3s; }
+.journey-record.is-expanded .journey-node,.journey-record:hover .journey-node { border-color: var(--chapter-accent); box-shadow: 0 0 0 5px #0b0e17,0 0 20px #a294ff20; }
+.journey-record.is-expanded .journey-node > span { background: var(--chapter-accent); }
+.journey-record-surface { position: relative; isolation: isolate; overflow: hidden; border: 1px solid #a0aec218; border-radius: 17px; background: linear-gradient(130deg,#151b28,#101520); padding: 23px; box-shadow: 0 7px 22px #0001; transition: border-color .3s,box-shadow .3s; }
+.journey-record-surface::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--chapter-accent) 10%,transparent),transparent 70%); opacity: .3; transition: opacity .3s; }
+.journey-record.is-expanded .journey-record-surface { border-color: color-mix(in srgb,var(--chapter-accent) 34%,transparent); box-shadow: 0 7px 28px #0002,inset 0 1px #ffffff03; }
+.journey-record:hover .journey-record-surface { border-color: color-mix(in srgb,var(--chapter-accent) 30%,transparent); }
+.journey-record.is-expanded .journey-record-surface::before,.journey-record:hover .journey-record-surface::before { opacity: 1; }
+.journey-record-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 19px; }
+.journey-kind { display: inline-flex; align-items: center; gap: 7px; text-transform: uppercase; color: #8e9cba; font: 7px monospace; letter-spacing: 1.3px; }
+.journey-kind .lucide { width: 12px; height: 12px; color: var(--chapter-accent); }
+.journey-state { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #ffffff0c; border-radius: 5px; padding: 3px 6px; color: #8796af; font-size: 8px; line-height: 1.5; }
+.journey-state .lucide { width: 10px; height: 10px; color: #95abac; }
+.journey-state.is-studying { background: #91c9b506; color: #93baac; border-color: #91c9b51a; }
+.journey-state .status-dot { width: 4px; height: 4px; }
+.timeline-identity { display: flex; align-items: center; gap: 15px; }
+.timeline-logo { display: grid; place-items: center; flex: 0 0 63px; width: 63px; height: 63px; padding: 3px; background: #fff; border: 1px solid #d4c5ff36; border-radius: 12px; box-shadow: 0 5px 18px #0002; overflow: hidden; transition: transform .25s,box-shadow .25s; }
 .timeline-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .timeline-logo-iit { padding: 5px; }
 .timeline-logo:hover { transform: translateY(-2px); box-shadow: 0 7px 22px #a294ff20; }
 .timeline-identity-copy { flex: 1; min-width: 0; }
-.timeline-item .timeline-identity h3 { margin-top: 0; margin-bottom: 5px; }
-.timeline-identity .institution { margin-bottom: 0; }
-@media (max-width: 850px) { .experience-company { font-size: 12px; }.timeline-item .experience-location { font-size: 10px; } }
-@media (max-width: 600px) { .experience-company { font-size: 13px; }.timeline-item .experience-dates { font-size: 12px; }.timeline-item .experience-location { font-size: 11px; }.timeline-logo { flex-basis: 58px; width: 58px; height: 58px; border-radius: 10px; }.timeline-identity { gap: 12px; }.timeline-identity h3 { font-size: 17px; } }
-@media (max-width: 360px) { .timeline-logo { flex-basis: 50px; width: 50px; height: 50px; }.timeline-identity { gap: 10px; }.timeline-identity h3 { font-size: 16px; }.timeline-identity .experience-company, .timeline-identity .institution { font-size: 11px; } }
-@media (prefers-reduced-motion: reduce) { .timeline-logo:hover { transform: none; } }
+.journey-record h3 { font-size: 20px; font-weight: 500; line-height: 1.4; letter-spacing: -.6px; margin: 0 0 5px; color: #e2e6f3; }
+.experience-company { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; color: #97a5bf; font-size: 12px; line-height: 1.7; transition: color .2s; }
+.experience-company:hover { color: #d0bbf7; }
+.experience-company .lucide { width: 12px; height: 12px; flex-shrink: 0; }
+.journey-record-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 17px; margin: 19px 0 18px; }
+.journey-record-meta > span { display: inline-flex; align-items: center; gap: 7px; font-size: 10px; color: #8d9ab4; }
+.journey-record-meta .lucide { width: 12px; height: 12px; color: #6f7e9c; flex-shrink: 0; }
+.journey-record-meta .experience-dates { color: #aea0cf; font-family: 'Space Grotesk',sans-serif; }
+.journey-workplace { padding-left: 15px; border-left: 1px solid #ffffff10; }
+.journey-record-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 14px; border-top: 1px solid #ffffff0a; }
+.journey-record-index { font: 6px monospace; letter-spacing: 1px; color: #54647e; }
+.journey-toggle { display: inline-flex; align-items: center; gap: 8px; border: 0; padding: 3px 0 3px 10px; background: none; color: #baa5ed; font-size: 10px; line-height: 1.6; }
+.journey-toggle > span { display: inline-flex; }
+.journey-toggle .lucide { width: 13px; height: 13px; }
+.journey-toggle:hover { color: #e0d0ff; }
+.journey-expanded { overflow: hidden; }
+.journey-expanded-inner { margin-top: 17px; padding-top: 18px; border-top: 1px solid #ffffff09; }
+.journey-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0; margin: 0; }
+.journey-detail-grid > div { min-width: 0; }
+.journey-detail-grid dt { font: 6px monospace; letter-spacing: 1.1px; color: #627591; margin-bottom: 6px; }
+.journey-detail-grid dd { color: #aab7cd; font-size: 11px; line-height: 1.8; margin: 0; }
+.journey-detail-grid .journey-detail-location { grid-column: 1/-1; }
+.journey-detail-location dd { display: flex; align-items: flex-start; gap: 7px; }
+.journey-detail-location .lucide { width: 12px; height: 12px; flex-shrink: 0; margin-top: 4px; color: #788eab; }
+.journey-source-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 10px; color: #ad9ad5; }
+.journey-source-link .lucide { width: 13px; height: 13px; }
+.journey-source-link:hover { color: #d8c2ff; }
+.journey-study-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
+.journey-study-tags > span { color: #8fabae; border: 1px solid #8eb9b214; background: #8eb9b205; border-radius: 4px; padding: 4px 7px; font-size: 8px; }
+.journey-bottom-note { display: flex; gap: 8px; align-items: center; justify-content: center; padding-top: 24px; color: #5f6c86; font-size: 8px; letter-spacing: .2px; }
+.journey-bottom-note .status-dot { width: 3px; height: 3px; background: #8e9ba9; box-shadow: none; }
+
+@media(max-width:1100px) {
+  .career-layout { gap: 43px; grid-template-columns: .85fr 1.35fr; }.career-sidebar h2 { font-size: 38px; }.career-sidebar .journey-intro { font-size: 12px; }.career-snapshot { padding: 19px; }.journey-record-surface { padding: 21px; }.journey-record h3 { font-size: 18px; }.experience-company { font-size: 11px; }.journey-filter { padding: 9px 10px; font-size: 9px; gap: 6px; }.journey-result-count { font-size: 7px; }.career-toolbar { gap: 10px; }
+}
+@media(max-width:850px) {
+  .career-layout { grid-template-columns: .78fr 1.3fr; gap: 30px; }.career-sidebar h2 { font-size: 32px; letter-spacing: -1.5px; }.career-kicker { font-size: 6px; letter-spacing: 1.2px; gap: 7px; }.career-sidebar .journey-intro { font-size: 11px; }.career-snapshot { padding: 16px; margin-top: 24px; }.career-metrics { padding-block: 22px; gap: 15px; }.career-metrics strong { font-size: 35px; }.career-metrics > div + div { padding-left: 18px; }.career-metrics span { font-size: 9px; }.career-snapshot-title { font-size: 10px; }.career-study { gap: 9px; }.career-study-logo { width: 35px; height: 35px; }.career-study p { font-size: 9px; }.career-study-label { font-size: 5px; letter-spacing: .7px; }.career-actions { gap: 13px; }.career-actions .button { font-size: 9px; padding-inline: 11px; gap: 12px; }.career-linkedin { font-size: 9px; }.career-footnote { font-size: 8px; gap: 7px; }.career-toolbar { margin-bottom: 22px; }.journey-result-count { padding-left: 3px; }.journey-record-surface { padding: 17px; border-radius: 14px; }.journey-list { padding-left: 23px; gap: 14px; }.journey-node { left: -23px; width: 9px; height: 9px; top: 30px; }.journey-rail { left: 4px; }.timeline-identity { gap: 12px; }.timeline-logo { width: 52px; height: 52px; flex-basis: 52px; border-radius: 10px; }.journey-record h3 { font-size: 17px; }.experience-company { font-size: 10px; }.journey-record-index { font-size: 5px; letter-spacing: .7px; }.journey-toggle { font-size: 9px; gap: 5px; }.journey-record-meta { gap: 11px; margin-block: 16px; }.journey-record-meta > span { font-size: 9px; gap: 6px; }.journey-workplace { padding-left: 10px; }.journey-state { font-size: 7px; }.journey-kind { font-size: 6px; letter-spacing: 1px; }.journey-detail-grid dd { font-size: 10px; }.journey-bottom-note { font-size: 7px; gap: 6px; }
+}
+@media(max-width:650px) {
+  .career-layout { display: flex; flex-direction: column; gap: 36px; }.career-sidebar { position: static; width: 100%; }.career-sidebar h2 { font-size: 38px; letter-spacing: -1.7px; }.career-kicker { font-size: 7px; letter-spacing: 1.5px; margin-bottom: 20px; }.career-sidebar .journey-intro { font-size: 12px; max-width: 420px; margin-top: 20px; }.career-snapshot { max-width: 430px; padding: 20px; margin-top: 25px; }.career-snapshot-title { font-size: 11px; }.career-metrics strong { font-size: 42px; }.career-metrics span { font-size: 10px; }.career-metrics > div + div { padding-left: 24px; }.career-study-logo { width: 41px; height: 41px; }.career-study { gap: 12px; }.career-study p { font-size: 11px; }.career-study-label { font-size: 6px; letter-spacing: 1px; }.career-actions { gap: 19px; margin-top: 21px; }.career-actions .button { font-size: 10px; padding-inline: 15px; gap: 20px; }.career-linkedin { font-size: 10px; }.career-footnote { display: none; }.career-explorer { width: 100%; }.career-toolbar { gap: 10px; margin-bottom: 24px; }.journey-filters { gap: 2px; padding: 4px; }.journey-filter { font-size: 10px; padding: 9px 10px; gap: 6px; }.journey-filter .lucide { width: 12px; height: 12px; }.journey-result-count { font-size: 7px; }.journey-list { gap: 15px; padding-left: 21px; }.journey-node { left: -21px; top: 31px; }.journey-record-surface { padding: 19px 17px; }.journey-record-top { margin-bottom: 18px; }.journey-kind { font-size: 6px; letter-spacing: 1.1px; }.journey-state { font-size: 7px; }.timeline-logo { flex-basis: 53px; width: 53px; height: 53px; }.timeline-identity { gap: 12px; }.journey-record h3 { font-size: 17px; }.experience-company { font-size: 11px; }.journey-record-meta { gap: 10px; margin-block: 17px; }.journey-record-meta > span { font-size: 10px; }.journey-record-index { font-size: 5px; letter-spacing: .5px; }.journey-toggle { font-size: 10px; gap: 5px; }.journey-detail-grid dd { font-size: 11px; }.journey-detail-grid dt { font-size: 6px; }.journey-source-link { font-size: 10px; }.journey-bottom-note { font-size: 7px; padding-top: 21px; }
+}
+@media(max-width:380px) {
+  .career-sidebar h2 { font-size: 33px; }.journey-filter { font-size: 9px; padding: 8px 9px; gap: 5px; }.journey-filter .lucide { width: 11px; height: 11px; }.journey-result-count { font-size: 6px; }.career-toolbar { gap: 8px; }.journey-record-surface { padding: 17px 13px; }.timeline-logo { flex-basis: 45px; width: 45px; height: 45px; border-radius: 9px; }.timeline-identity { gap: 10px; }.journey-record h3 { font-size: 15px; letter-spacing: -.4px; }.experience-company { font-size: 10px; }.journey-kind { font-size: 5px; letter-spacing: .8px; }.journey-state { font-size: 6px; }.journey-record-meta > span { font-size: 9px; }.journey-record-index { font-size: 4px; letter-spacing: .4px; }.journey-toggle { font-size: 9px; }.journey-record-meta { gap: 8px; }.journey-workplace { padding-left: 8px; }.journey-detail-grid dd { font-size: 10px; }.journey-bottom-note { font-size: 6px; }
+}
+@media(prefers-reduced-motion:reduce) { .timeline-logo:hover { transform: none; } }
