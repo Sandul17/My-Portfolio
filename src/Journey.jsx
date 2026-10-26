@@ -22,8 +22,15 @@ export function Journey() {
           {experience.map(job => <article className="timeline-item internship-item" key={job.id} data-experience={job.id} aria-label={`${job.role} at ${job.company}`}>
             <span className="timeline-dot"/>
             <div className="timeline-top"><span className="little-label">WORK EXPERIENCE</span><span className="internship-badge"><BriefcaseBusiness aria-hidden="true"/>{job.employmentType}</span></div>
-            <h3>{job.role}</h3>
-            <a className="experience-company" href={job.companyUrl} target="_blank" rel="noopener noreferrer">{job.company}<ArrowUpRight aria-hidden="true"/></a>
+            <div className="timeline-identity">
+              <a className="timeline-logo" href={job.companyUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${job.company} on LinkedIn`}>
+                <img src={job.logo} alt={`${job.company} logo`} width="100" height="100" loading="lazy" decoding="async"/>
+              </a>
+              <div className="timeline-identity-copy">
+                <h3>{job.role}</h3>
+                <a className="experience-company" href={job.companyUrl} target="_blank" rel="noopener noreferrer">{job.company}<ArrowUpRight aria-hidden="true"/></a>
+              </div>
+            </div>
             <p className="experience-dates"><time dateTime={job.startDate}>{formatMonth(job.startDate)}</time><span aria-hidden="true"> — </span><span className="sr-only"> to </span><time dateTime={job.endDate}>{formatMonth(job.endDate)}</time></p>
             <p className="experience-location"><MapPin aria-hidden="true"/><span>{job.location}</span></p>
             <div className="timeline-details"><span>{job.workplace}</span></div>
@@ -31,8 +38,16 @@ export function Journey() {
           <article className="timeline-item">
             <span className="timeline-dot secondary-dot"/>
             <div className="timeline-top"><span className="little-label">EDUCATION</span><span className="current-badge">CURRENT</span></div>
-            <h3>BEng (Hons) Software Engineering</h3>
-            <p className="institution">Informatics Institute of Technology (IIT)</p><p>Fourth-Year Undergraduate</p>
+            <div className="timeline-identity">
+              <a className="timeline-logo timeline-logo-iit" href="https://www.iit.ac.lk/" target="_blank" rel="noopener noreferrer" aria-label="Visit Informatics Institute of Technology">
+                <img src="/assets/logos/iit.png" alt="Informatics Institute of Technology (IIT) logo" width="2233" height="916" loading="lazy" decoding="async"/>
+              </a>
+              <div className="timeline-identity-copy">
+                <h3>BEng (Hons) Software Engineering</h3>
+                <p className="institution">Informatics Institute of Technology (IIT)</p>
+              </div>
+            </div>
+            <p>Fourth-Year Undergraduate</p>
             <div className="timeline-details"><span>Software development</span><span>Academic research</span><span>Engineering principles</span></div>
           </article>
         </div>

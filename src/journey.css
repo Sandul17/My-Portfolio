@@ -18,5 +18,15 @@
 .timeline-item .experience-location { display: flex; align-items: flex-start; gap: 7px; font-size: 11px; margin-top: 8px; max-width: 390px; }
 .experience-location .lucide { flex-shrink: 0; width: 13px; height: 13px; margin-top: 3px; }
 .internship-item .timeline-details { margin-top: 12px; }
+.timeline-identity { display: flex; align-items: center; gap: 15px; margin-top: 15px; margin-bottom: 10px; }
+.timeline-logo { display: grid; place-items: center; flex: 0 0 68px; width: 68px; height: 68px; padding: 3px; background: #fff; border: 1px solid #d4c5ff36; border-radius: 12px; box-shadow: 0 5px 18px #0002; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.timeline-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.timeline-logo-iit { padding: 5px; }
+.timeline-logo:hover { transform: translateY(-2px); box-shadow: 0 7px 22px #a294ff20; }
+.timeline-identity-copy { flex: 1; min-width: 0; }
+.timeline-item .timeline-identity h3 { margin-top: 0; margin-bottom: 5px; }
+.timeline-identity .institution { margin-bottom: 0; }
 @media (max-width: 850px) { .experience-company { font-size: 12px; }.timeline-item .experience-location { font-size: 10px; } }
-@media (max-width: 600px) { .experience-company { font-size: 13px; }.timeline-item .experience-dates { font-size: 12px; }.timeline-item .experience-location { font-size: 11px; } }
+@media (max-width: 600px) { .experience-company { font-size: 13px; }.timeline-item .experience-dates { font-size: 12px; }.timeline-item .experience-location { font-size: 11px; }.timeline-logo { flex-basis: 58px; width: 58px; height: 58px; border-radius: 10px; }.timeline-identity { gap: 12px; }.timeline-identity h3 { font-size: 17px; } }
+@media (max-width: 360px) { .timeline-logo { flex-basis: 50px; width: 50px; height: 50px; }.timeline-identity { gap: 10px; }.timeline-identity h3 { font-size: 16px; }.timeline-identity .experience-company, .timeline-identity .institution { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { .timeline-logo:hover { transform: none; } }

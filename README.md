@@ -32,6 +32,8 @@ The 3D bundle is not requested for narrow screens, reduced-motion preferences, u
 
 All education, skills, projects, experience, and contact details come from information supplied by Sandul. The internships at Sri Lanka Telecom (March–September 2026) and the Prime Minister’s Office Sri Lanka (July 2025–January 2026) use the titles, dates, employment types, and locations Sandul supplied from LinkedIn. Responsibilities and achievements are omitted because none were provided. No employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
 
+Timeline logos are stored locally in `public/assets/logos/`. The employer logos are the images Sandul supplied from the [Sri Lanka Telecom](https://www.linkedin.com/company/166104/) and [Prime Minister’s Office Sri Lanka](https://www.linkedin.com/company/109893347/) LinkedIn company pages. The IIT logo comes from [IIT’s official website](https://www.iit.ac.lk/wp-content/uploads/2026/08/IIT-Logo-Black.png). Original colors and proportions are preserved on white logo tiles.
+
 ## Contact form activation
 
 The form posts over HTTPS to FormSubmit, addressed to `sandulhansana@gmail.com`. It includes required-field checks, name/email/message validation, a honeypot, submission state, a request timeout, and explicit success/error handling. A failed request preserves the visitor's message and provides the email address for direct contact.
