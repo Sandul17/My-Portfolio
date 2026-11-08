@@ -28,7 +28,7 @@ export function Hero({ localTime, onSearch }) {
 
       <m.aside className="profile-card" aria-label="Profile summary" initial={reduced ? false : { opacity: 0, y: 30, rotate: 2 }} animate={{ opacity: 1, y: 0, rotate: 0 }} transition={{ duration: 1, delay: .35, ease }}>
         <div className="profile-top">
-          <m.div className="avatar photo-ring" initial={reduced ? false : { scale: .6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 220, damping: 16, delay: .7 }} whileHover={reduced ? undefined : { scale: 1.08, rotate: -4 }}><img src="/assets/sandul.jpg" alt="Sandul Hansana" width="230" height="230" decoding="async"/></m.div>
+          <m.div className="avatar photo-ring" initial={reduced ? false : { scale: .6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 220, damping: 16, delay: .7 }} whileHover={reduced ? undefined : { scale: 1.08, rotate: -4 }}><img src="assets/sandul.jpg" alt="Sandul Hansana" width="230" height="230" decoding="async"/></m.div>
           <div><strong>{profile.name}</strong><span>{profile.role}</span></div>
         </div>
         <div className="profile-rows">
