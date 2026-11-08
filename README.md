@@ -15,34 +15,25 @@ Create the production build with `npm run build`, and preview it with `npm run p
 
 ## Content
 
-Contact details and project descriptions are in `src/profile.js`. Add repository and live links there when available; links without a destination are not rendered. `src/App.jsx` assembles the page; the profile bento is in `src/About.jsx`, the hero is in `src/Hero.jsx`, and skill groups and brand icons are in `src/Skills.jsx` and `src/SkillIcon.jsx`. Project presentation metadata is in `src/project-data.js`, with shared visuals in `src/ProjectArtwork.jsx`. Internship details live in `src/data/experience.json`, shared by the experience timeline in `src/Journey.jsx` and the PDF résumé generator. Contact behavior is in `src/Contact.jsx`, with styles in `src/styles.css`, `src/skills.css`, `src/journey.css`, `src/effects.css`, and `src/application.css`.
+All content — profile, projects, skill groups, soft skills, education and achievements — lives in `src/profile.js` and comes from Sandul’s CV (`public/assets/sandul-hansana-cv.pdf`). Internship details live in `src/data/experience.json`. Nothing beyond the CV and previously supplied LinkedIn details has been invented; project previews are illustrative CSS mock-ups (`src/ProjectVisual.jsx`), not screenshots.
+
+`src/App.jsx` assembles the page from `Hero`, `About` (bento grid), `Skills`, `Projects` (+ `ProjectDialog`), `Experience` (timeline) and `Contact`. All styles are in `src/styles.css`, built on CSS custom-property design tokens with light and dark themes.
+
+## Design
+
+- Light/dark theme that follows the system setting, with a manual toggle (remembered per browser) and a View Transitions circular reveal.
+- Geist + Instrument Serif typography, a single orange accent, bento-grid layout, subtle grain and grid backgrounds.
+- Floating glass navigation with an animated active pill, a ⌘K / Ctrl K command menu, and a full-screen menu on phones.
+- Spotlight hover cards, blur-in scroll reveals, a tech marquee, and filterable project grid with shareable `/?project=<id>#projects` links.
+- Every animation respects `prefers-reduced-motion`.
 
 ## Frontend libraries
 
 | Library | Role |
 | --- | --- |
-| [Motion for React](https://motion.dev/docs/react) | Spring entrances, viewport reveals, card tilt, magnetic buttons, reading progress, and project-filter transitions. |
-| [Lenis](https://github.com/darkroomengineering/lenis) | Smooth desktop wheel and anchor scrolling; pauses when a project or navigation dialog opens. |
-| [React Three Fiber](https://r3f.docs.pmnd.rs/) + [Drei](https://drei.docs.pmnd.rs/) + [Three.js](https://threejs.org/) | Procedurally lit, interactive 3D hero sculpture with no external model or environment downloads. |
-| [Lucide React](https://lucide.dev/guide/react/) | Consistent navigation, action, and foundation-skill icons. Technology brand artwork remains local SVG. |
-
-`src/Experience.jsx` configures Motion and Lenis. Reusable animation components live in `src/Animated.jsx`; `src/HeroScene.jsx` holds the lazy-loaded 3D scene.
-
-The 3D bundle is not requested for narrow screens, reduced-motion preferences, unsupported WebGL, or data-saving mode. Those visitors see the SVG hero instead. The scene pauses offscreen and in background tabs. Pointer effects and smooth scrolling respect reduced-motion preferences, including changes made while the page is open.
-
-All education, skills, projects, experience, and contact details come from information supplied by Sandul. The internships at Sri Lanka Telecom (March–September 2026) and the Prime Minister’s Office Sri Lanka (July 2025–January 2026) use the titles, dates, employment types, and locations Sandul supplied from LinkedIn. Responsibilities and achievements are omitted because none were provided. No employment, grades, dates, or project results have been invented. PlotGuard artwork is labelled as a concept visual.
-
-Timeline logos are stored locally in `public/assets/logos/`. The employer logos are the images Sandul supplied from the [Sri Lanka Telecom](https://www.linkedin.com/company/166104/) and [Prime Minister’s Office Sri Lanka](https://www.linkedin.com/company/109893347/) LinkedIn company pages. The IIT logo comes from [IIT’s official website](https://www.iit.ac.lk/wp-content/uploads/2026/08/IIT-Logo-Black.png). Original colors and proportions are preserved on white logo tiles.
-
-The experience explorer has All chapters, Experience, and Education filters, expandable placement details, a scroll-linked timeline, and a sticky career snapshot on larger screens. Details use the confirmed employment types, work arrangements, locations, and education stage; no responsibilities are inferred. Filter buttons and detail toggles support keyboard use, expose their state to assistive technology, and respect reduced-motion settings. The résumé and LinkedIn actions are available beside the timeline.
-
-## Exploring the portfolio
-
-- Press **⌘ K** or **Ctrl K**, or use the header search button, for quick navigation. Search sections and projects, copy the email address, or download the résumé. Use arrow keys and Enter to select, and Escape to close.
-- Filter skills by category or search by technology name. Project search matches titles, descriptions, tags, and features, and combines with Research / Development filters. Both explorers have result counts and reset controls.
-- Project details include an overview, highlights, previous/next navigation, and shareable links such as `/?project=plotguard#projects`. Unknown project IDs are ignored. The share action offers a manual copy field if clipboard access is unavailable.
-- **Discuss this project** opens the contact section with the project attached and preserves other fields already entered. Failed submissions retain the visitor’s draft; successful submissions clear it. Drafts are not stored in browser storage.
-- On phones, a floating navigation dock offers direct access to the main sections. Active section indicators, native dialog focus handling, inline field errors, and reduced-motion behavior support keyboard and assistive-technology users.
+| [Motion for React](https://motion.dev/docs/react) | Entrances, viewport reveals, shared-layout pills, spotlight cards, reading progress. |
+| [Lenis](https://github.com/darkroomengineering/lenis) | Smooth desktop wheel and anchor scrolling; pauses while a dialog is open. |
+| [Lucide React](https://lucide.dev/guide/react/) | UI icons. Technology brand artwork is local SVG in `src/SkillIcon.jsx`. |
 
 ## Contact form activation
 
@@ -52,13 +43,9 @@ The form posts over HTTPS to FormSubmit, addressed to `sandulhansana@gmail.com`.
 
 The site never claims that a message reached the inbox: success means the email service accepted the submission. No live test message was sent during implementation. Browser verification uses intercepted service responses.
 
-## Résumé
+## CV
 
-The downloadable résumé is at `public/assets/sandul-hansana-cv.pdf`. Regenerate it from confirmed information with:
-
-```sh
-python3 scripts/create-resume.py
-```
+The downloadable CV is `public/assets/sandul-hansana-cv.pdf`. To update it, replace that file with the new PDF (keep the filename).
 
 ## Hosting
 
