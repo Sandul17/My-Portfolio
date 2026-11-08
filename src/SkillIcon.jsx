@@ -45,6 +45,21 @@ export function SkillIcon({ name, className = '' }) {
     case 'intellij':
       artwork = <><path d="M0 0h24v24H0Z" fill="#eb4d88"/><path d="m0 8 11-8h13L12 24H0Z" fill="#8264ef"/><path d="m9 0 15 8v16L7 12Z" fill="#318de2"/><rect x="3" y="3" width="18" height="18" fill="#11121a"/><text x="5.2" y="13" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="9" fill="#fff" stroke="none">IJ</text><path d="M5.5 18h6" stroke="#fff" strokeWidth="1.5"/></>;
       break;
+    case 'laravel':
+      artwork = <path d="M3 5.5 7 3.2l4 2.3v9.2l8-4.6V5.5l-4-2.3-4 2.3m8 4.6-4 2.3m4 2.3V19l-8 4.6L3 19V5.5m4 11.5 8-4.6M7 3.2V17" stroke="#ff2d20" strokeWidth="1.3" fill="none"/>;
+      break;
+    case 'bootstrap':
+      artwork = <><rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#7952b3"/><text x="6.6" y="17.3" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="14" fill="#fff" stroke="none">B</text></>;
+      break;
+    case 'mysql':
+      artwork = <><ellipse cx="12" cy="5.5" rx="8" ry="3" fill="#00758f"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13c0 1.7-3.6 3-8 3s-8-1.3-8-3Z" fill="#00546b"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#f29111" strokeWidth="1.2" fill="none"/></>;
+      break;
+    case 'mongodb':
+      artwork = <><path d="M12 1c3.5 4 5.5 7.5 5.5 11.5S15 19 12.6 20.3L12 23l-.6-2.7C9 19 6.5 16.5 6.5 12.5S8.5 5 12 1Z" fill="#47a248"/><path d="M12 4v18" stroke="#c4e9b8" strokeWidth=".9"/></>;
+      break;
+    case 'figma':
+      artwork = <><path d="M8 1h4v7H8a3.5 3.5 0 0 1 0-7Z" fill="#f24e1e"/><path d="M12 1h4a3.5 3.5 0 0 1 0 7h-4Z" fill="#ff7262"/><path d="M8 8h4v7H8a3.5 3.5 0 0 1 0-7Z" fill="#a259ff"/><circle cx="15.5" cy="11.5" r="3.5" fill="#1abcfe"/><path d="M8 15h4v3.5A3.5 3.5 0 1 1 8 15Z" fill="#0acf83"/></>;
+      break;
     default:
       artwork = <><path d="M9 18h6m-5 3h4M8 14a7 7 0 1 1 8 0c-1 1-1 2-1 4H9c0-2 0-3-1-4Z"/><path d="m10 9 2 2 3-4"/></>;
   }
