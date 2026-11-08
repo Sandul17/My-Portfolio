@@ -6,7 +6,7 @@ export const profile = {
   location: 'Sri Lanka',
   github: 'https://github.com/Sandul17',
   linkedin: 'https://www.linkedin.com/in/sandul-hansana-vas-gunawardana-b30279255/',
-  cv: '/assets/sandul-hansana-cv.pdf',
+  cv: 'assets/sandul-hansana-cv.pdf',
   // FormSubmit sends an activation link on the first submission.
   formEndpoint: 'https://formsubmit.co/ajax/sandulhansana@gmail.com',
   summary: 'A motivated Software Engineering student with a strong interest in web development, front-end technologies, and UI/UX design. I enjoy building responsive, user-focused applications that combine functionality with clean visual design.',

@@ -49,4 +49,6 @@ The downloadable CV is `public/assets/sandul-hansana-cv.pdf`. To update it, repl
 
 ## Hosting
 
-The Sites project identity is stored in `.openai/hosting.json`. Vite creates the static production site in `dist/`.
+**GitHub Pages:** `.github/workflows/deploy-pages.yml` builds and deploys the site on every push to `main` (or manually from the Actions tab). It sets `BASE_PATH=/My-Portfolio/` so the site works at https://sandul17.github.io/My-Portfolio/. One-time setup: in the repository go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
+
+Asset paths in the source are relative (`assets/...`) so the same build works at a sub-path or at a domain root. Other hosts build with the default base `/`. The OpenAI Sites project identity is stored in `.openai/hosting.json`; Vite outputs the static site to `dist/`.
