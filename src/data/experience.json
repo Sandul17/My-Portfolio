@@ -8,19 +8,21 @@
     "employmentType": "Internship",
     "startDate": "2026-03",
     "endDate": "2026-09",
-    "location": "Colombo, Western Province, Sri Lanka",
-    "workplace": "On-site"
+    "location": "Colombo, Sri Lanka",
+    "workplace": "On-site",
+    "summary": ""
   },
   {
     "id": "prime-ministers-office",
-    "role": "Software Developer Intern",
-    "company": "Prime Minister’s Office Sri Lanka",
+    "role": "Software Development Intern",
+    "company": "Prime Minister’s Office of Sri Lanka",
     "companyUrl": "https://www.linkedin.com/company/109893347/",
     "logo": "/assets/logos/prime-ministers-office.jpg",
     "employmentType": "Internship",
     "startDate": "2025-07",
     "endDate": "2026-01",
-    "location": "58, Sir Ernest De Silva Mawatha, Colombo 07, Sri Lanka",
-    "workplace": "On-site"
+    "location": "Colombo 07, Sri Lanka",
+    "workplace": "On-site",
+    "summary": "Developed parts of internal software systems while performing testing and modifications to improve functionality."
   }
 ]
