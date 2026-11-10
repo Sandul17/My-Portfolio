@@ -15,6 +15,7 @@ export const profile = {
 export const projects = [
   {
     id: 'leave-application',
+    image: 'assets/projects/leave-application.svg',
     title: 'Leave Application System',
     subtitle: 'Parliament Members & Officers',
     kind: 'web',
@@ -28,6 +29,7 @@ export const projects = [
   },
   {
     id: 'gate-pass',
+    image: 'assets/projects/gate-pass.svg',
     title: 'Gate Pass System',
     subtitle: 'Government web application',
     kind: 'web',
@@ -41,6 +43,7 @@ export const projects = [
   },
   {
     id: 'wedify',
+    image: 'assets/projects/wedify.svg',
     title: 'Wedify',
     subtitle: 'Wedding planning mobile app',
     kind: 'mobile',
@@ -53,6 +56,7 @@ export const projects = [
   },
   {
     id: 'plotguard',
+    image: 'assets/projects/plotguard.svg',
     title: 'PlotGuard',
     subtitle: 'Final year research project',
     kind: 'research',
@@ -65,6 +69,7 @@ export const projects = [
   },
   {
     id: 'wellness',
+    image: 'assets/projects/wellness.svg',
     title: 'Wellness',
     subtitle: 'Health care web application',
     kind: 'web',
@@ -77,6 +82,7 @@ export const projects = [
   },
   {
     id: 'cinema-tickets',
+    image: 'assets/projects/cinema-tickets.svg',
     title: 'Cinema Ticket Booking',
     subtitle: 'Java program',
     kind: 'software',
@@ -89,6 +95,7 @@ export const projects = [
   },
   {
     id: 'portfolio',
+    image: 'assets/projects/portfolio.svg',
     title: 'Personal Portfolio',
     subtitle: 'This website',
     kind: 'web',

@@ -24,7 +24,7 @@ export function ProjectDialog({ project, onClose, onNavigate, onDiscuss }) {
   return <dialog className="project-dialog" ref={dialog} onCancel={e => { e.preventDefault(); onClose(); }} onClick={e => { if (e.target === e.currentTarget) onClose(); }} aria-labelledby="dialog-title" data-native-scroll>
     {project && <div className="dialog-panel">
       <div className="dialog-top"><span className="mono">{String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')} · {project.category}</span><button className="icon-button" type="button" onClick={onClose} aria-label="Close project details"><X aria-hidden="true"/></button></div>
-      <ProjectVisual project={project}/>
+      <ProjectVisual project={project} eager/>
       <div className="dialog-body">
         <h2 id="dialog-title">{project.title}</h2>
         <p className="dialog-sub">{project.subtitle}</p>
