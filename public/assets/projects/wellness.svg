@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
+<defs>
+<linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#0f766e' stop-opacity='.95'/><stop offset='1' stop-color='#3b82f6' stop-opacity='.95'/></linearGradient>
+<radialGradient id='glow' cx='.8' cy='.15' r='.7'><stop offset='0' stop-color='#fff' stop-opacity='.45'/><stop offset='1' stop-color='#fff' stop-opacity='0'/></radialGradient>
+<pattern id='dots' width='28' height='28' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1.4' fill='#fff' fill-opacity='.22'/></pattern>
+<filter id='sh' x='-20%' y='-20%' width='140%' height='150%'><feDropShadow dx='0' dy='24' stdDeviation='26' flood-color='#0b0b0d' flood-opacity='.28'/></filter>
+<filter id='sh2' x='-20%' y='-20%' width='140%' height='150%'><feDropShadow dx='0' dy='12' stdDeviation='14' flood-color='#0b0b0d' flood-opacity='.22'/></filter>
+</defs>
+<rect width='1200' height='750' fill='url(#bg)'/>
+<rect width='1200' height='750' fill='url(#dots)'/>
+<rect width='1200' height='750' fill='url(#glow)'/>
+<circle cx='1080' cy='640' r='260' fill='#fff' fill-opacity='.08'/>
+<circle cx='90' cy='90' r='160' fill='#fff' fill-opacity='.07'/>
+<g filter='url(#sh)'><rect x='70' y='70' width='700' height='620' rx='22' fill='#ffffff'/></g>
+<rect x='70' y='70' width='700' height='52' rx='22' fill='#f1f0ec'/><rect x='70' y='100' width='700' height='22' fill='#f1f0ec'/>
+<circle cx='98' cy='96' r='7' fill='#ff5f57'/><circle cx='120' cy='96' r='7' fill='#febc2e'/><circle cx='142' cy='96' r='7' fill='#28c840'/>
+<rect x='180' y='84' width='480' height='24' rx='12' fill='#ffffff'/><text x='200' y='101' font-size='13' fill='#85837c'>localhost / wellness / quiz</text>
+<g transform='translate(70,122)'><text x='60' y='58' font-size='13' font-weight='600' fill='#0d9488' letter-spacing='2'>WELLNESS CHECK</text>
+<text x='560' y='58' font-size='14' font-weight='700' text-anchor='end' fill='#121211'>60%</text>
+<rect x='60' y='74' width='500' height='12' rx='6' fill='#e7f6f4'/><rect x='60' y='74' width='300' height='12' rx='6' fill='#0d9488'/>
+<text x='60' y='140' font-size='13' fill='#85837c'>Question 6 of 10</text>
+<text x='60' y='182' font-size='28' font-weight='700' fill='#121211'>How many hours do you</text><text x='60' y='218' font-size='28' font-weight='700' fill='#121211'>usually sleep each night?</text>
+<rect x='60' y='250' width='520' height='54' rx='14' fill='#fff' stroke='#e2e0da' stroke-width='2'/><circle cx='92' cy='277' r='10' fill='none' stroke='#c9c6be' stroke-width='2'/><text x='116' y='282' font-size='16' fill='#121211'>Less than 6 hours</text><rect x='60' y='316' width='520' height='54' rx='14' fill='#fff' stroke='#e2e0da' stroke-width='2'/><circle cx='92' cy='343' r='10' fill='none' stroke='#c9c6be' stroke-width='2'/><text x='116' y='348' font-size='16' fill='#121211'>6 – 7 hours</text><rect x='60' y='382' width='520' height='54' rx='14' fill='#ccfbf1' stroke='#0d9488' stroke-width='2'/><circle cx='92' cy='409' r='10' fill='#fff' stroke='#0d9488' stroke-width='2'/><circle cx='92' cy='409' r='5' fill='#0d9488'/><text x='116' y='414' font-size='16' fill='#121211'>7 – 9 hours</text><rect x='60' y='448' width='520' height='54' rx='14' fill='#fff' stroke='#e2e0da' stroke-width='2'/><circle cx='92' cy='475' r='10' fill='none' stroke='#c9c6be' stroke-width='2'/><text x='116' y='480' font-size='16' fill='#121211'>More than 9 hours</text><rect x='420' y='526' width='160' height='46' rx='23' fill='#121211'/><text x='500' y='554' font-size='15' font-weight='600' text-anchor='middle' fill='#fff'>Next →</text></g><g filter='url(#sh2)'><rect x='800' y='180' width='300' height='380' rx='24' fill='#fff'/></g>
+<text x='826' y='222' font-size='16' font-weight='700' fill='#121211'>Your progress</text>
+<circle cx='950' cy='340' r='78' stroke='#e7f6f4' stroke-width='20' fill='none'/>
+<circle cx='950' cy='340' r='78' stroke='#0d9488' stroke-width='20' fill='none' stroke-dasharray='294 490' stroke-linecap='round' transform='rotate(-90 950 340)'/>
+<text x='950' y='350' font-size='32' font-weight='700' text-anchor='middle' fill='#121211'>60%</text>
+<rect x='826' y='456' width='248' height='10' rx='5.0' fill='#e9e7e1'/><rect x='826' y='478' width='200' height='10' rx='5.0' fill='#e9e7e1'/><rect x='826' y='500' width='224' height='10' rx='5.0' fill='#e9e7e1'/>
+</svg>
