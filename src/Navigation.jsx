@@ -20,7 +20,7 @@ export function Navigation({ active, onSearch, theme, onTheme }) {
     scroll(); document.addEventListener('keydown', key); window.addEventListener('scroll', scroll, { passive: true });
     return () => { document.removeEventListener('keydown', key); window.removeEventListener('scroll', scroll); };
   }, []);
-  const links = sections.slice(1, -1);
+  const links = sections.slice(1);
   return <header className={`header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
     <div className="nav-bar">
       <a className="brand" href="#home" aria-label="Sandul Hansana, home"><span className="brand-mark">sh</span><span className="brand-name">Sandul Hansana</span></a>
