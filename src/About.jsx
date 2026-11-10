@@ -37,7 +37,7 @@ function IdPhoto() {
   return <m.div className="id-photo photo-ring" initial={reduced ? false : 'hidden'} whileInView="visible" viewport={{ once: true, amount: .4 }}
     whileHover={reduced ? undefined : { rotate: -3, scale: 1.03 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
     <m.div className="id-photo-frame" variants={{ hidden: { clipPath: 'inset(100% 0% 0% 0% round 22px)' }, visible: { clipPath: 'inset(0% 0% 0% 0% round 22px)', transition: { duration: 1, ease: [.7, 0, .2, 1] } } }}>
-      <m.img src="assets/sandul.jpg" alt="Portrait of Sandul Hansana" width="230" height="230" loading="lazy" decoding="async"
+      <m.img src="assets/sandul.jpg" alt="Portrait of Sandul Hansana" width="1333" height="2000" loading="lazy" decoding="async"
         variants={{ hidden: { scale: 1.35 }, visible: { scale: 1, transition: { duration: 1.4, ease: [.2, .7, .2, 1] } } }}/>
     </m.div>
     <m.span className="id-photo-hi" aria-hidden="true" variants={{ hidden: { scale: 0, rotate: -30 }, visible: { scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 300, damping: 12, delay: .9 } } }}><span className="wave">👋</span> Hi!</m.span>
