@@ -8,7 +8,7 @@ export function useTheme() {
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || read() || system());
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0b0b0d' : '#f5f4f0');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0b1120' : '#f8f9fa');
   }, [theme]);
   useEffect(() => {
     const media = window.matchMedia('(prefers-color-scheme: dark)');
