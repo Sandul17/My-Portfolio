@@ -10,10 +10,10 @@ const meta = {
   HTML: ['html', '#e44d26'], CSS: ['css', '#1572b6'], JavaScript: ['javascript', '#e8c400'], React: ['react', '#38bdf8'],
   Laravel: ['laravel', '#ff2d20'], 'Node.js': ['nodejs', '#68a063'], Bootstrap: ['bootstrap', '#7952b3'],
   Java: ['java', '#ed7957'], Python: ['python', '#4584b6'], PHP: ['php', '#8993be'], 'React Native': ['react', '#38bdf8'],
-  MySQL: ['mysql', '#00758f'], MongoDB: ['mongodb', '#47a248'], Figma: ['figma', '#a259ff'], 'Object-Oriented Programming': ['oop', '#ff5a1f'],
+  MySQL: ['mysql', '#00758f'], MongoDB: ['mongodb', '#47a248'], Figma: ['figma', '#a259ff'], 'Object-Oriented Programming': ['oop', '#2563eb'],
 };
 
-const skills = skillGroups.flatMap(g => g.skills.map(name => ({ name, group: g.id, groupTitle: g.title, icon: meta[name]?.[0] ?? 'problem', color: meta[name]?.[1] ?? '#ff5a1f' })));
+const skills = skillGroups.flatMap(g => g.skills.map(name => ({ name, group: g.id, groupTitle: g.title, icon: meta[name]?.[0] ?? 'problem', color: meta[name]?.[1] ?? '#2563eb' })));
 const rings = [skills.slice(0, 4), skills.slice(4, 9), skills.slice(9)];
 const short = { 'Object-Oriented Programming': 'OOP' };
 const tabLabel = { all: 'All', web: 'Web', languages: 'Languages', mobile: 'Mobile', data: 'Data', design: 'Design', concepts: 'Concepts' };
