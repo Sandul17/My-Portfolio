@@ -25,7 +25,7 @@ const validation=(name,value)=>{
 
 export function ContactForm({ projectTopic='', onClearTopic }) {
   const formRef=useRef(null);
-  const [status,setStatus]=useState({type:'',message:''});
+  const [status,setStatus]=useState({type:'',message:'',fallback:''});
   const [errors,setErrors]=useState({});
   const [messageCount,setMessageCount]=useState(0);
   const [sending,setSending]=useState(false);
@@ -46,13 +46,19 @@ export function ContactForm({ projectTopic='', onClearTopic }) {
     if(Date.now()-startedAt.current<2000){setStatus({type:'error',message:'Please take a moment to review your message, then try again.'});return}
     pending.current=true;setSending(true);setStatus({type:'',message:''});
     const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),20000);
+    const subject=String(fields.get('subject')||'Portfolio inquiry')+(projectTopic?` — ${projectTopic}`:'');
+    const mailto=`mailto:${profile.email}?subject=${encodeURIComponent(`Portfolio: ${subject}`)}&body=${encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`)}`;
     try {
-      const subject=String(fields.get('subject')||'Portfolio inquiry')+(projectTopic?` — ${projectTopic}`:'');
-      const response=await fetch(profile.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},signal:controller.signal,body:JSON.stringify({...values,subject,_subject:`Portfolio: ${subject}`,_replyto:values.email,_template:'table',_honey:''})});
-      const result=await response.json();
-      if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Message not accepted');
-      setStatus({type:'success',message:'Thanks! Your message has been accepted. I look forward to connecting with you.'});form.reset();setMessageCount(0);setErrors({});onClearTopic?.();startedAt.current=Date.now();
-    }catch{setStatus({type:'error',message:`Your message could not be submitted. Please try again, or email ${profile.email} directly. Your message is still here.`})}
+      const response=await fetch(profile.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},signal:controller.signal,body:JSON.stringify({name:values.name,email:values.email,message:values.message,subject,_subject:`Portfolio: ${subject}`,_replyto:values.email,_template:'table',_captcha:'false'})});
+      let result={};try{result=await response.json()}catch{}
+      if(!response.ok||!(result.success===true||result.success==='true'))throw new Error(result.message||`Request failed (${response.status})`);
+      setStatus({type:'success',message:'Thanks! Your message has been sent. I’ll get back to you soon.',fallback:''});form.reset();setMessageCount(0);setErrors({});onClearTopic?.();startedAt.current=Date.now();
+    }catch(error){
+      const activation=/activat/i.test(error?.message||'');
+      setStatus({type:'error',fallback:mailto,message:activation
+        ?'The message service is still being set up, so this form can’t deliver yet. Please send it with your email app instead — your message is already filled in.'
+        :'Your message couldn’t be sent right now. You can send it with your email app instead — your message is already filled in.'});
+    }
     finally{clearTimeout(timeout);pending.current=false;setSending(false)}
   };
   return <form id="contact-form" className="contact-form" ref={formRef} onSubmit={handleSubmit} noValidate aria-busy={sending}>
@@ -65,5 +71,6 @@ export function ContactForm({ projectTopic='', onClearTopic }) {
     <button className="button button-solid button-lg send-button" type="submit" disabled={sending}>{sending?'Sending…':'Send message'}{sending?<LoaderCircle className="send-icon-spin" aria-hidden="true"/>:<ArrowUpRight aria-hidden="true"/>}</button>
     <p className="form-note">Delivered securely with <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a>. Your details are used to reply to your message.</p>
     <p id="form-status" className={`form-status ${status.type}`} role={status.type==='error'?'alert':'status'} aria-live="polite">{status.message}</p>
+    {status.fallback&&<a className="button button-ghost form-fallback" href={status.fallback}><Mail aria-hidden="true"/>Send with my email app</a>}
   </form>;
 }
